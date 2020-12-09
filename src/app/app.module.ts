@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -8,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +19,7 @@ import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { PracticingComponentsComponent } from './practicing-components/practicing-components.component';
 import { PracticingDatabindingComponent } from './practicing-databinding/practicing-databinding.component';
+import { PracticingDirectivesComponent } from './practicing-directives/practicing-directives.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +29,13 @@ import { PracticingDatabindingComponent } from './practicing-databinding/practic
     SuccessAlertComponent,
     WarningAlertComponent,
     PracticingComponentsComponent,
-    PracticingDatabindingComponent
+    PracticingDatabindingComponent,
+    PracticingDirectivesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    CommonModule,
     BrowserAnimationsModule,
     MatInputModule,
     MatSliderModule,

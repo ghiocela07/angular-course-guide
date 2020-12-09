@@ -2,9 +2,6 @@
     margin: 20px;
     padding: 20px;
     background-color:ghostwhite;
-    -webkit-box-shadow: 15px 21px 17px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 15px 21px 17px 0px rgba(0,0,0,0.75);
-    box-shadow: 15px 21px 17px 0px rgba(0,0,0,0.75);
 }
 
 .add-button{

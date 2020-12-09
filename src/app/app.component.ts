@@ -14,6 +14,8 @@ export class AppComponent {
 
   public displayPracticingDataBindingAssignment = false;
 
+  public displayPracticingDirectivesAssignment = false;
+
   showPracticingComponentsAssignment(show: boolean): void {
     this.displayPracticingComponentsAssignment = show;
   }
@@ -24,5 +26,9 @@ export class AppComponent {
 
   showPracticingDataBindingAssignment(show: boolean): void {
     this.displayPracticingDataBindingAssignment = show;
+  }
+
+  showPracticingDirectivesAssignment(show: boolean): void {
+    this.displayPracticingDirectivesAssignment = show;
   }
 }
