@@ -1,0 +1,28 @@
+<div class="div-container">
+    <div class="mat-title">Section 5:Components & Data Binding Deep Dive</div>
+    <mat-tab-group>
+        <mat-tab label="Practice">
+            <mat-card class="practice-card">
+                <app-cockpit (serverCreated)="onServerAdded($event)" (blueprintCreated)="onBlueprintAdded($event)">
+                </app-cockpit>
+                <button class="button-lifecycle-hooks" mat-raised-button color="primary" type="button"
+                    (click)="onChangeFirst()">Change First Element</button>
+                <button class="button-lifecycle-hooks" mat-raised-button color="warn" type="button"
+                    (click)="onDestroyFirst()">Destroy First Component</button>
+                <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement"
+                    [name]="serverElement.name">
+                    <div #contentDiv class="server" *ngIf="serverElement.type==='server'">
+                        {{serverElement.content}}
+                    </div>
+
+                    <div #contentDiv class="blueprint" *ngIf="serverElement.type === 'blueprint'">
+                        {{serverElement.content}}
+                    </div>
+                </app-server-element>
+            </mat-card>
+        </mat-tab>
+        <mat-tab label="Assignment">
+            <app-practicing-property-event-binding></app-practicing-property-event-binding>
+        </mat-tab>
+    </mat-tab-group>
+</div>

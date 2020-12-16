@@ -1,0 +1,24 @@
+
+<div>
+    Add new server or blueprint
+</div>
+<div>
+    <mat-form-field class="server-mat-field">
+        <mat-label>Server name</mat-label>
+        <!-- <input matInput type="text" [(ngModel)]="newServerName" /> -->
+        <input matInput type="text" #serverNameInput>
+    </mat-form-field>
+</div>
+<div>
+    <mat-form-field class="server-mat-field">
+        <mat-label>Server Content</mat-label>
+        <!-- <input matInput type="text" [(ngModel)]="newServerContent" /> -->
+        <input matInput type="text" #serverContentInput />
+    </mat-form-field>
+</div>
+<div>
+    <button class="add-button" mat-raised-button color="accent" (click)="onAddServer(serverNameInput)">
+        Add Server</button>
+    <button class="add-button" mat-raised-button color="primary" (click)="onAddBlueprintServer(serverNameInput)">
+        Add Server Blueprint</button>
+</div>

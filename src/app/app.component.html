@@ -1,69 +1,22 @@
-<div class="app-title">
-    <h1 class="title-label">{{title}}</h1>
-</div>
+<mat-toolbar class="app-toolbar" color="accent">
+  <mat-icon class="menu-icon" (click)="sidenav.toggle()">menu</mat-icon>
+  <span>{{title}}</span>
 
-<button class="show-hide-button" *ngIf="!displayPractice" mat-raised-button (click)="showPractice(true)"
-    color="accent">Show
-    Practice</button>
-<button class="show-hide-button" *ngIf="displayPractice" mat-raised-button (click)="showPractice(false)"
-    color="accent">Hide
-    Practice </button>
-<div *ngIf="displayPractice">
-    <app-servers></app-servers>
-</div>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
 
-<div class="div-container">
-    <div class="mat-title">Section 2: The Basics</div>
+      <a mat-list-item [routerLink]="'/basics'" (click)="sidenav.toggle()"> Section 2: The Basics </a>
+      <a mat-list-item [routerLink]="'/comp-datab-deep-dive'" (click)="sidenav.toggle()">Section 5:Components & Data
+        Binding Deep Dive </a>
+      <a mat-list-item (click)="sidenav.toggle()" mat-list-item>Close</a>
 
-    <button class="show-hide-button" *ngIf="!displayPracticingComponentsAssignment" mat-raised-button
-        (click)="showPracticingComponentsAssignment(true)">Show Components Assignment</button>
-    <button class="show-hide-button" *ngIf="displayPracticingComponentsAssignment" mat-raised-button
-        (click)="showPracticingComponentsAssignment(false)">Hide Components Assignment</button>
-
-    <div *ngIf="displayPracticingComponentsAssignment">
-        <app-practicing-components></app-practicing-components>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+      <router-outlet></router-outlet>
     </div>
-    <button class="show-hide-button" *ngIf="!displayPracticingDataBindingAssignment" mat-raised-button
-        (click)="showPracticingDataBindingAssignment(true)">Show Data Binding Assignment</button>
-    <button class="show-hide-button" *ngIf="displayPracticingDataBindingAssignment" mat-raised-button
-        (click)="showPracticingDataBindingAssignment(false)">Hide Data Binding Assignment</button>
-    <div *ngIf="displayPracticingDataBindingAssignment">
-        <app-practicing-databinding></app-practicing-databinding>
-    </div>
-
-    <button class="show-hide-button" *ngIf="!displayPracticingDirectivesAssignment" mat-raised-button
-        (click)="showPracticingDirectivesAssignment(true)">Show Directives Assignment</button>
-    <button class="show-hide-button" *ngIf="displayPracticingDirectivesAssignment" mat-raised-button
-        (click)="showPracticingDirectivesAssignment(false)">Hide Directives Assignment</button>
-    <div *ngIf="displayPracticingDirectivesAssignment">
-        <app-practicing-directives></app-practicing-directives>
-    </div>
-</div>
-
-<div class="div-container">
-    <div class="mat-title">Section 3: The Basics</div>
-
-    <button class="show-hide-button" *ngIf="!displayPracticingComponentsAssignment" mat-raised-button
-        (click)="showPracticingComponentsAssignment(true)">Show Components Assignment</button>
-    <button class="show-hide-button" *ngIf="displayPracticingComponentsAssignment" mat-raised-button
-        (click)="showPracticingComponentsAssignment(false)">Hide Components Assignment</button>
-
-    <div *ngIf="displayPracticingComponentsAssignment">
-        <app-practicing-components></app-practicing-components>
-    </div>
-    <button class="show-hide-button" *ngIf="!displayPracticingDataBindingAssignment" mat-raised-button
-        (click)="showPracticingDataBindingAssignment(true)">Show Data Binding Assignment</button>
-    <button class="show-hide-button" *ngIf="displayPracticingDataBindingAssignment" mat-raised-button
-        (click)="showPracticingDataBindingAssignment(false)">Hide Data Binding Assignment</button>
-    <div *ngIf="displayPracticingDataBindingAssignment">
-        <app-practicing-databinding></app-practicing-databinding>
-    </div>
-
-    <button class="show-hide-button" *ngIf="!displayPracticingDirectivesAssignment" mat-raised-button
-        (click)="showPracticingDirectivesAssignment(true)">Show Directives Assignment</button>
-    <button class="show-hide-button" *ngIf="displayPracticingDirectivesAssignment" mat-raised-button
-        (click)="showPracticingDirectivesAssignment(false)">Hide Directives Assignment</button>
-    <div *ngIf="displayPracticingDirectivesAssignment">
-        <app-practicing-directives></app-practicing-directives>
-    </div>
-</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

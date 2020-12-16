@@ -1,0 +1,46 @@
+<mat-card class="assignment-card">
+    <div class="mat-title">
+        Assignment 4: Practicing Property & Event binding and View Encapsulation
+    </div>
+    <mat-expansion-panel class="expansion-panel">
+        <mat-expansion-panel-header>
+            Requirement
+        </mat-expansion-panel-header>
+        <ng-template matExpansionPanelContent>
+            <mat-list role="list">
+                <mat-list-item role="listitem">1.Create three new components: GameControl, Odd and Even
+                </mat-list-item>
+                <mat-list-item role="listitem">2.The GameControl Component should have buttons to start and stop the
+                    game
+                    the input)</mat-list-item>
+                <mat-list-item role="listitem">3.When starting the game, an event (holding a incrementing number) should
+                    get emitted each second (ref = setInterval())</mat-list-item>
+                <mat-list-item role="listitem">4.The event should be listenable from outside the component
+                </mat-list-item>
+                <mat-list-item role="listitem">5.When stopping the game, no more events should get emitted
+                    (clearInterval(ref))
+                </mat-list-item>
+                <mat-list-item role="listitem">6.A new Odd component should get created for every odd number emitted,
+                    the same should happen for the Even Component (on even numbers)
+                </mat-list-item>
+                <mat-list-item role="listitem">7.Simply output Odd - NUMBER or Even - NUMBER in the two components
+                </mat-list-item>
+                <mat-list-item role="listitem">8.Style the element (e.g. paragraph) holding your output text differently
+                    in both components
+                </mat-list-item>
+            </mat-list>
+        </ng-template>
+    </mat-expansion-panel>
+    <mat-expansion-panel class="expansion-panel">
+        <mat-expansion-panel-header>
+            Solution
+        </mat-expansion-panel-header>
+        <ng-template matExpansionPanelContent>
+            <app-game-control (numberEmitted)="onNumberEmitted($event)"></app-game-control>
+            <div *ngFor="let number of numbers">
+                <app-even *ngIf="isEven(number)" [evenNumber]="number"></app-even>
+                <app-odd  *ngIf="!isEven(number)" [oddNumber]="number"></app-odd>
+            </div>
+        </ng-template>
+    </mat-expansion-panel>
+</mat-card>
