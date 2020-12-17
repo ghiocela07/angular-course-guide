@@ -34,6 +34,10 @@ import { PracticingPropertyEventBindingComponent } from './comp-datab-deep-dive-
 import { GameControlComponent } from './comp-datab-deep-dive-section/practicing-property-event-binding/game-control/game-control.component';
 import { OddComponent } from './comp-datab-deep-dive-section/practicing-property-event-binding/odd/odd.component';
 import { EvenComponent } from './comp-datab-deep-dive-section/practicing-property-event-binding/even/even.component';
+import { DirectivesDeepDiveSectionComponent } from './directives-deep-dive-section/directives-deep-dive-section.component';
+import { BasicHighlightDirecive } from './directives-deep-dive-section/basic-highlight/basic-highlight.directive';
+import { BetterHighlightDirective } from './directives-deep-dive-section/better-highlight/better-highlight.directive';
+import { UnlessDirective } from './unless.directive';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,11 @@ import { EvenComponent } from './comp-datab-deep-dive-section/practicing-propert
     PracticingPropertyEventBindingComponent,
     GameControlComponent,
     OddComponent,
-    EvenComponent
+    EvenComponent,
+    DirectivesDeepDiveSectionComponent,
+    BasicHighlightDirecive,
+    BetterHighlightDirective,
+    UnlessDirective
   ],
   imports: [
     AppRoutingModule,

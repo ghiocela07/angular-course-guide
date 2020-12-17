@@ -1,0 +1,59 @@
+<div class="div-container">
+    <div class="mat-title">Section 5:Components & Data Binding Deep Dive</div>
+    <mat-tab-group>
+        <mat-tab label="Practice">
+            <mat-card class="practice-card">
+                <p>Structural Directives Angular & Custom and Angular Attribute Directive</p>
+                <button mat-raised-button color="primary" (click)="onlyOdd = !onlyOdd">Show only odd numbers</button>
+                <mat-list>
+                    <div *ngIf="onlyOdd">
+                        <mat-list-item [ngClass]="{odd: odd % 2 !== 0}"
+                            [ngStyle]="{backgroundColor: odd % 2 !== 0 ? '#ffd740': 'transparent'}"
+                            style="margin-bottom: 10px;" *ngFor="let odd of oddNumbers">
+                            {{odd}}
+                        </mat-list-item>
+                    </div>
+                    <!-- <div *ngIf="!onlyOdd">
+                        <mat-list-item [ngClass]="{odd: even % 2 !== 0}"
+                            [ngStyle]="{backgroundColor: even % 2 !== 0 ? '#ffd740': 'transparent'}"
+                            *ngFor="let even of evenNumbers">
+                            {{even}}
+                        </mat-list-item>
+                    </div>
+                    <ng-template [ngIf]="!onlyOdd">
+                        <div>
+                            <mat-list-item [ngClass]="{odd: even % 2 !== 0}"
+                                [ngStyle]="{backgroundColor: even % 2 !== 0 ? '#ffd740': 'transparent'}"
+                                *ngFor="let even of evenNumbers">
+                                {{even}}
+                            </mat-list-item>
+                        </div>
+                    </ng-template> -->
+                    <div *appUnless="onlyOdd">
+                        <mat-list-item [ngClass]="{odd: even % 2 !== 0}"
+                            [ngStyle]="{backgroundColor: even % 2 !== 0 ? '#ffd740': 'transparent'}"
+                            *ngFor="let even of evenNumbers">
+                            {{even}}
+                        </mat-list-item>
+                    </div>
+                </mat-list>
+                <mat-divider></mat-divider>
+                <p>Custom Attribute Directives</p>
+                <p appBasicHighlight> Style me with basic diective </p>
+                <p [appBetterHighlight]="'red'" defaultColor="yellow"> Style me with better diective
+                </p>
+                <mat-divider></mat-divider>
+                <p>ngSwitch Directive</p>
+                <div [ngSwitch]="value">
+                    <p *ngSwitchCase="5">Value is 5</p>
+                    <p *ngSwitchCase="10">Value is 10</p>
+                    <p *ngSwitchCase="100">Value is 100</p>
+                    <p *ngSwitchDefault >Value is Default</p>
+                </div>
+            </mat-card>
+        </mat-tab>
+        <mat-tab label="Assignment">
+
+        </mat-tab>
+    </mat-tab-group>
+</div>
