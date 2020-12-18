@@ -37,3 +37,21 @@
     cursor: pointer;
     margin-right: 20px;
 }
+a{
+    color: black;
+    text-decoration: none;
+    font-family: fantasy;
+}
+.section-title{
+    font-family: fantasy;
+}
+
+.practice-card {
+    margin: 20px;
+    padding: 20px;
+    background-color: floralwhite;
+    width: fit-content;
+}
+.back-button{
+    vertical-align: middle;
+}

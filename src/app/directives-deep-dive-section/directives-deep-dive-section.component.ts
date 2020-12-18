@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-directives-deep-dive-section',
@@ -12,9 +13,14 @@ export class DirectivesDeepDiveSectionComponent implements OnInit {
   evenNumbers = [2, 4];
   onlyOdd: boolean = false;
   value = 10;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  
+  navigateBackToMain() {
+    this.router.navigateByUrl('');
   }
 
 }

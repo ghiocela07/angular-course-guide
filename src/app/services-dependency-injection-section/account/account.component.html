@@ -1,0 +1,8 @@
+<div>
+    <h3 class="mat-title"><b>{{account?.name}}</b></h3>
+    <p>This account is {{account?.status}}</p>
+</div>
+<button class="account-button" mat-raised-button color="primary" (click)="onSetTo('active')">Set to 'active'</button>
+<button class="account-button" mat-raised-button color="accent" (click)="onSetTo('inactive')">Set to 'inactive'</button>
+<button class="account-button" mat-raised-button color="warn" (click)="onSetTo('unknown')">Set to 'unknown'</button>
+<hr>

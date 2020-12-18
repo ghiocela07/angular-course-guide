@@ -15,6 +15,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,6 +39,12 @@ import { DirectivesDeepDiveSectionComponent } from './directives-deep-dive-secti
 import { BasicHighlightDirecive } from './directives-deep-dive-section/basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './directives-deep-dive-section/better-highlight/better-highlight.directive';
 import { UnlessDirective } from './unless.directive';
+import { ServicesDependencyInjectionSectionComponent } from './services-dependency-injection-section/services-dependency-injection-section.component';
+import { AccountComponent } from './services-dependency-injection-section/account/account.component';
+import { NewAccountComponent } from './services-dependency-injection-section/new-account/new-account.component';
+import { PracticingServicesComponent } from './services-dependency-injection-section/practicing-services/practicing-services.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -60,7 +67,12 @@ import { UnlessDirective } from './unless.directive';
     DirectivesDeepDiveSectionComponent,
     BasicHighlightDirecive,
     BetterHighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    ServicesDependencyInjectionSectionComponent,
+    AccountComponent,
+    NewAccountComponent,
+    PracticingServicesComponent,
+    MainPageComponent
   ],
   imports: [
     AppRoutingModule,
@@ -80,9 +92,11 @@ import { UnlessDirective } from './unless.directive';
     MatToolbarModule,
     MatTabsModule,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule,
+    FlexLayoutModule
   ],
-  providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

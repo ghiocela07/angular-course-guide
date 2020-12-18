@@ -1,0 +1,14 @@
+.section-card{
+    margin: 20px;
+    background-color: floralwhite;
+   text-align: center;
+}
+
+.info{
+    margin:20px;
+    display: block;
+}
+.card-title{
+    font-family: fantasy;
+    text-align: center;
+}

@@ -1,0 +1,20 @@
+<div class="div-container">
+    <div class="mat-title section-title">
+        <button mat-icon-button class="back-button" (click)="navigateBackToMain()">
+            <mat-icon>navigate_before</mat-icon>
+        </button>Section 9: Using Services & Dependecy Injection
+    </div>
+    <mat-tab-group>
+        <mat-tab label="Practice">
+            <mat-card class="mat-elevation-z4 practice-card">
+                <app-new-account></app-new-account>
+                <hr>
+                <app-account *ngFor="let account of accounts; let i=index" [account]="account" [id]="i">
+                </app-account>
+            </mat-card>
+        </mat-tab>
+        <mat-tab label="Assignment">
+            <app-practicing-services></app-practicing-services>
+        </mat-tab>
+    </mat-tab-group>
+</div>
