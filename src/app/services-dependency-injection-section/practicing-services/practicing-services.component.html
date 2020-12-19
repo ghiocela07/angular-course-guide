@@ -7,23 +7,16 @@
             Requirement
         </mat-expansion-panel-header>
         <ng-template matExpansionPanelContent>
-            <!-- <mat-list role="list">
-                <mat-list-item role="listitem">1.Add A button which says 'Display Details'
+            <mat-list role="list">
+                <mat-list-item role="listitem">Active and unactive users list with a button/link Set to active/inactive
                 </mat-list-item>
-                <mat-list-item role="listitem">2.Add a paragraph with any content of your choice (e.g. 'Secret Password
-                    =
-                    tuna')</mat-list-item>
-                <mat-list-item role="listitem">3.Toggle the displaying of that paragraph with the button created in the
-                    first step</mat-list-item>
-                <mat-list-item role="listitem">4.Log all button clicks in an array and output that array below the
-                    secret
-                    paragraph (maybe log a timestamp or simply an incrementing number)
+                <mat-list-item role="listitem">This app is using events to set active and unactive')</mat-list-item>
+                <mat-list-item role="listitem">1.Optimize this app by addding UserService which manages the active and
+                    inactive users</mat-list-item>
+                <mat-list-item role="listitem">2.Also add a CounterService hich counts the number of active->inactive
+                    and inactive->active actions
                 </mat-list-item>
-                <mat-list-item role="listitem">5.Starting at the 5th log item, give all future log items a blue
-                    background
-                    (via ngStyle) and white color (ngClass)
-                </mat-list-item>
-            </mat-list> -->
+            </mat-list>
         </ng-template>
     </mat-expansion-panel>
 
@@ -32,6 +25,9 @@
             Solution
         </mat-expansion-panel-header>
         <ng-template matExpansionPanelContent>
+            <app-active-users></app-active-users>
+            <app-inactive-users></app-inactive-users>
+            <app-counter></app-counter>
         </ng-template>
     </mat-expansion-panel>
 </mat-card>

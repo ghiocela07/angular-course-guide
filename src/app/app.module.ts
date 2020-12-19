@@ -45,6 +45,9 @@ import { NewAccountComponent } from './services-dependency-injection-section/new
 import { PracticingServicesComponent } from './services-dependency-injection-section/practicing-services/practicing-services.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ActiveUsersComponent } from './services-dependency-injection-section/practicing-services/active-users/active-users.component';
+import { InactiveUsersComponent } from './services-dependency-injection-section/practicing-services/inactive-users/inactive-users.component';
+import { CounterComponent } from './services-dependency-injection-section/practicing-services/counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +75,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AccountComponent,
     NewAccountComponent,
     PracticingServicesComponent,
-    MainPageComponent
+    MainPageComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent,
+    CounterComponent
   ],
   imports: [
     AppRoutingModule,
