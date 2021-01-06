@@ -8,7 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
+import { MatListModule, MatSelectionList } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -48,6 +48,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ActiveUsersComponent } from './services-dependency-injection-section/practicing-services/active-users/active-users.component';
 import { InactiveUsersComponent } from './services-dependency-injection-section/practicing-services/inactive-users/inactive-users.component';
 import { CounterComponent } from './services-dependency-injection-section/practicing-services/counter/counter.component';
+import { RoutingSectionComponent } from './routing-section/routing-section.component';
+import { RoutingHomeComponent } from './routing-section/routing-home/routing-home.component';
+import { RoutingServersComponent } from './routing-section/routing-servers/routing-servers.component';
+import { RoutingServerComponent } from './routing-section/routing-servers/routing-server/routing-server.component';
+import { RoutingEditServerComponent } from './routing-section/routing-servers/routing-edit-server/routing-edit-server.component';
+import { RoutingUsersComponent } from './routing-section/routing-users/routing-users.component';
+import { RoutingUserComponent } from './routing-section/routing-users/routing-user/routing-user.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { ErrorComponent } from './shared/error/error.component';
+
 
 @NgModule({
   declarations: [
@@ -78,7 +88,16 @@ import { CounterComponent } from './services-dependency-injection-section/practi
     MainPageComponent,
     ActiveUsersComponent,
     InactiveUsersComponent,
-    CounterComponent
+    CounterComponent,
+    RoutingSectionComponent,
+    RoutingHomeComponent,
+    RoutingServersComponent,
+    RoutingServerComponent,
+    RoutingEditServerComponent,
+    RoutingUsersComponent,
+    RoutingUserComponent,
+    PageNotFoundComponent,
+    ErrorComponent
   ],
   imports: [
     AppRoutingModule,

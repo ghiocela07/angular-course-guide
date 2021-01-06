@@ -1,0 +1,14 @@
+.section-card {
+    margin: 20px auto;
+    background-color: floralwhite;
+    width: fit-content;
+    text-align: center!important;
+}
+
+.card-title {
+    font-family: fantasy;
+    font-size: -webkit-xxx-large;
+}
+.card-content{
+    margin-top: 20px;
+}

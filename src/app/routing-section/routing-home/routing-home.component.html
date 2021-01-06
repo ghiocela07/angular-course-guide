@@ -1,0 +1,9 @@
+<button mat-button color="primary" (click)="onLogin()" [disabled]="isLoggedIn()">Login</button>
+<button mat-button color="primary" (click)="onLogout()" [disabled]="!isLoggedIn()">Logout</button>
+<div>
+    <h3>Welcome to Server Manager 4.0</h3>
+</div>
+<p>
+    Manage your Servers and Users
+</p>
+<button mat-raised-button color="primary" (click)="onLoadServers(1)">Load Servers 1</button>

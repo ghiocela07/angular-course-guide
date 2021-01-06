@@ -1,0 +1,19 @@
+<h4 class="not-allowed-message" *ngIf="!allowEdit"><b>Please Note! </b>You are not allowed to edit.</h4>
+<div *ngIf="allowEdit">
+    <form *ngIf="server" class="server-form">
+        <mat-form-field>
+            <mat-label>Server Name</mat-label>
+            <input matInput [(ngModel)]="serverName" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Server Status</mat-label>
+            <mat-select [(ngModel)]="serverStatus" [ngModelOptions]="{standalone: true}">
+                <mat-option *ngFor="let status of availableStatuses" [value]="status">
+                    {{status}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="onUpdateServer()">Update Server</button>
+    </form>
+</div>

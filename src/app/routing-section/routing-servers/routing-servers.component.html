@@ -1,0 +1,18 @@
+<div fxLayout="row" fxLayoutGap="30px">
+    <div class="server-list">
+        <mat-selection-list #serverList [multiple]="false" [(ngModel)]="selectedServer"
+            (ngModelChange)="onNgModelChange($event)">
+            <!-- TODO: check why this throws an error -->
+            <mat-list-option *ngFor="let server of servers" [value]="server"
+                [routerLink]="['/routing/servers', server.id]" [queryParams]="{allowEdit: server.id === 3 ? '1' : '0'}"
+                fragment="loading">
+                {{server.name}}
+            </mat-list-option>
+        </mat-selection-list>
+    </div>
+    <div class="selected-server-detail">
+        <!-- <button mat-raised-button color="accent" class="reload-button"(click)="onReloadPage()">Reload Page</button> -->
+        <!-- <app-routing-edit-server></app-routing-edit-server> -->
+        <router-outlet></router-outlet>
+    </div>
+</div>

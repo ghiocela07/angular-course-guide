@@ -21,3 +21,7 @@ body {
     background: peru;
     color: ivory;
 }
+
+.mat-card-header-text {
+    margin: 0 auto!important;
+}

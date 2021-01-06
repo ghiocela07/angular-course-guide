@@ -1,0 +1,13 @@
+<div fxLayout="row" fxLayoutGap="30px">
+    <div class="users-list">
+        <mat-selection-list #usersList [multiple]="false" [(ngModel)]="selectedUser"
+            (ngModelChange)="onNgModelChange($event)">
+
+            <mat-list-option *ngFor="let user of users" [value]="user"
+                [routerLink]="['/routing/users', user.id, user.name]">
+                {{user.name}}
+            </mat-list-option>
+        </mat-selection-list>
+    </div>
+    <router-outlet></router-outlet>
+</div>

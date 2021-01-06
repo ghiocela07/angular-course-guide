@@ -1,0 +1,9 @@
+<div class="server-detail" *ngIf="server">
+    <p>
+        <b>{{server.name}}</b>
+    </p>
+    <p>
+        Server status is <span [style.color]="getStatusColor()">{{server.status}}</span>
+    </p>
+    <button mat-raised-button color="primary" (click)="onEdit()">Edit Server</button>
+</div>

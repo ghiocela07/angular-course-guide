@@ -1,0 +1,9 @@
+.server-list{
+    width: fit-content;
+}
+.selected-server-detail{
+    margin-top: 5px;
+}
+.reload-button{
+    margin-bottom: 10px;
+}
