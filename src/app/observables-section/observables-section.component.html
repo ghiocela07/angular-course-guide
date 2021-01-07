@@ -7,6 +7,16 @@
     <mat-tab-group>
         <mat-tab label="Practice">
             <mat-card class="mat-elevation-z4 practice-card">
+
+                <nav mat-tab-nav-bar>
+                    <a mat-tab-link routerLinkActive="active" routerLink="/observables" [routerLinkActiveOptions]="{exact:
+                        true}">Home</a>
+
+                    <a mat-tab-link routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                        true}" *ngFor="let user of users" [routerLink]="['user',user.id]">User {{user.id}}</a>
+                </nav>
+                <p *ngIf="userActivated">Activated!</p>
+                <router-outlet></router-outlet>
             </mat-card>
         </mat-tab>
         <mat-tab label="Assignment">

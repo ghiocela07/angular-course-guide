@@ -53,11 +53,13 @@ import { RoutingHomeComponent } from './routing-section/routing-home/routing-hom
 import { RoutingServersComponent } from './routing-section/routing-servers/routing-servers.component';
 import { RoutingServerComponent } from './routing-section/routing-servers/routing-server/routing-server.component';
 import { RoutingEditServerComponent } from './routing-section/routing-servers/routing-edit-server/routing-edit-server.component';
-import { RoutingUsersComponent } from './routing-section/routing-users/routing-users.component';
-import { RoutingUserComponent } from './routing-section/routing-users/routing-user/routing-user.component';
+import { UsersComponent } from './routing-section/routing-users/routing-users.component';
+import { UserComponent } from './routing-section/routing-users/routing-user/routing-user.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { ErrorComponent } from './shared/error/error.component';
 import { ObservablesSectionComponent } from './observables-section/observables-section.component';
+import { ObservableUserComponent } from './observables-section/observable-user/observable-user.component';
+import { ObservableHomeComponent } from './observables-section/observable-home/observable-home.component';
 
 
 @NgModule({
@@ -95,11 +97,13 @@ import { ObservablesSectionComponent } from './observables-section/observables-s
     RoutingServersComponent,
     RoutingServerComponent,
     RoutingEditServerComponent,
-    RoutingUsersComponent,
-    RoutingUserComponent,
+    UsersComponent,
+    UserComponent,
     PageNotFoundComponent,
     ErrorComponent,
-    ObservablesSectionComponent
+    ObservablesSectionComponent,
+    ObservableUserComponent,
+    ObservableHomeComponent
   ],
   imports: [
     AppRoutingModule,

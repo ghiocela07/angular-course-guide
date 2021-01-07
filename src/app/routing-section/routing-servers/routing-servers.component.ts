@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSelectionList } from '@angular/material/list';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RoutingUser } from '../routing-users/routing-user.model';
+import { User } from 'src/app/user.model';
 import { RoutingServer } from './routing-server.model';
 import { RoutingServersService } from './routing-servers.service';
 
@@ -25,7 +25,7 @@ export class RoutingServersComponent implements OnInit {
     this.servers = this.serversService.getServers();
   }
 
-  onNgModelChange(user: RoutingUser) {
+  onNgModelChange(user: User) {
     this.selectedServer = this.serversList?.selectedOptions.selected[0].value;
     console.log('Selected server: ' + this.selectedServer?.name);
   }

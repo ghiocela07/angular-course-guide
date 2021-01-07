@@ -22,6 +22,11 @@ body {
     color: ivory;
 }
 
+.error-snackbar {
+    background: red;
+    color: ivory;
+}
+
 .mat-card-header-text {
     margin: 0 auto!important;
 }

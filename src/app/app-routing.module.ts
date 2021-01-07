@@ -5,6 +5,8 @@ import { BasicsSectionComponent } from './basics-section/basics-section.componen
 import { CompDatabDeepDiveSectionComponent } from './comp-datab-deep-dive-section/comp-datab-deep-dive-section.component';
 import { DirectivesDeepDiveSectionComponent } from './directives-deep-dive-section/directives-deep-dive-section.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { ObservableHomeComponent } from './observables-section/observable-home/observable-home.component';
+import { ObservableUserComponent } from './observables-section/observable-user/observable-user.component';
 import { ObservablesSectionComponent } from './observables-section/observables-section.component';
 import { RoutingHomeComponent } from './routing-section/routing-home/routing-home.component';
 
@@ -14,11 +16,9 @@ import { RoutingEditServerComponent } from './routing-section/routing-servers/ro
 import { RoutingServerComponent } from './routing-section/routing-servers/routing-server/routing-server.component';
 import { RoutingServerResolver } from './routing-section/routing-servers/routing-server/server-resolver.service';
 import { RoutingServersComponent } from './routing-section/routing-servers/routing-servers.component';
-import { RoutingUser } from './routing-section/routing-users/routing-user.model';
-import { RoutingUserComponent } from './routing-section/routing-users/routing-user/routing-user.component';
-import { RoutingUsersComponent } from './routing-section/routing-users/routing-users.component';
+import { UserComponent } from './routing-section/routing-users/routing-user/routing-user.component';
+import { UsersComponent } from './routing-section/routing-users/routing-users.component';
 import { ServicesDependencyInjectionSectionComponent } from './services-dependency-injection-section/services-dependency-injection-section.component';
-import { ErrorComponent } from './shared/error/error.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -32,9 +32,9 @@ const routes: Routes = [
             { path: '', component: RoutingHomeComponent },
             { path: 'home', component: RoutingHomeComponent },
             {
-                path: 'users', component: RoutingUsersComponent,
+                path: 'users', component: UsersComponent,
                 children: [
-                    { path: ':id/:name', component: RoutingUserComponent },
+                    { path: ':id/:name', component: UserComponent },
                 ]
             },
             {
@@ -50,7 +50,13 @@ const routes: Routes = [
 
         ]
     },
-    { path: 'observables', component: ObservablesSectionComponent },
+    {
+        path: 'observables', component: ObservablesSectionComponent, children: [
+            { path: '', component: ObservableHomeComponent },
+            { path: 'user/:id', component: ObservableUserComponent },
+
+        ]
+    },
     { path: 'not-found', component: PageNotFoundComponent },
     // { path: 'not-found', component: ErrorComponent, data: {message: 'Page not found!'} },
     { path: '', component: MainPageComponent, pathMatch: 'full' },
