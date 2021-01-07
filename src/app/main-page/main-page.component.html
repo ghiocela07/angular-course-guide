@@ -4,71 +4,17 @@
 </div> -->
 <div class="content" fxLayout="row wrap">
 
-  <div fxFlex="fit-content">
+  <div fxFlex="fit-content" *ngFor="let section of appSections">
 
     <mat-card class="mat-elevation-z4 section-card">
       <mat-card-header>
-        <mat-card-title class="card-title">Basics</mat-card-title>
+        <mat-card-title class="card-title">{{section.title}}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p>Section 2 - The Basics</p>
+        <p>Section {{section.id}} - {{section.content}}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="accent" (click)="navigateTo('basics')">Go To Section</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-  <div fxFlex="fit-content">
-    <mat-card class="mat-elevation-z4 section-card">
-      <mat-card-header>
-        <mat-card-title  class="card-title">Components and databinding deep dive</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Section 5 - Components and databinding deep dive</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="accent" (click)="navigateTo('comp-datab-deep-dive')">Go To Section</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-  <div fxFlex="fit-content">
-    <mat-card class="mat-elevation-z4 section-card">
-      <mat-card-header>
-        <mat-card-title  class="card-title"> Directives Deep Dive</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Section 7 - Directives Deep Dive</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="accent" (click)="navigateTo('directives-deep-dive')">Go To Section</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-  <div fxFlex="fit-content">
-    <mat-card class="mat-elevation-z4 section-card">
-      <mat-card-header>
-        <mat-card-title  class="card-title"> Services and Dependency Injection</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Section 9 - Using Services and Dependency Injection</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="accent" (click)="navigateTo('services-dependency-injection')">Go To
-          Section</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-  <div fxFlex="fit-content">
-    <mat-card class="mat-elevation-z4 section-card">
-      <mat-card-header>
-        <mat-card-title  class="card-title"> Routing</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Section 11 - Changing pages with routing</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="accent" (click)="navigateTo('routing')">Go To
-          Section</button>
+        <button mat-raised-button color="accent" (click)="navigateTo(section.routePath)">Go To Section</button>
       </mat-card-actions>
     </mat-card>
   </div>

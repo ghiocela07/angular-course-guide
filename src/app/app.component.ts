@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { appSections } from './sections';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title = 'Angular - The Ultimate Guide';
+  appSections = appSections;
 }

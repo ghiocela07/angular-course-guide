@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { appSections } from '../sections';
 
 @Component({
   selector: 'app-main-page',
@@ -8,11 +9,12 @@ import { Router } from '@angular/router';
 })
 export class MainPageComponent implements OnInit {
 
+  appSections =  appSections;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-  navigateTo(path: string){
+  navigateTo(path: string) {
     this.router.navigateByUrl(path);
   }
 

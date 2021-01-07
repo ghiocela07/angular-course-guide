@@ -57,6 +57,7 @@ import { RoutingUsersComponent } from './routing-section/routing-users/routing-u
 import { RoutingUserComponent } from './routing-section/routing-users/routing-user/routing-user.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { ErrorComponent } from './shared/error/error.component';
+import { ObservablesSectionComponent } from './observables-section/observables-section.component';
 
 
 @NgModule({
@@ -97,7 +98,8 @@ import { ErrorComponent } from './shared/error/error.component';
     RoutingUsersComponent,
     RoutingUserComponent,
     PageNotFoundComponent,
-    ErrorComponent
+    ErrorComponent,
+    ObservablesSectionComponent
   ],
   imports: [
     AppRoutingModule,

@@ -5,7 +5,9 @@ import { BasicsSectionComponent } from './basics-section/basics-section.componen
 import { CompDatabDeepDiveSectionComponent } from './comp-datab-deep-dive-section/comp-datab-deep-dive-section.component';
 import { DirectivesDeepDiveSectionComponent } from './directives-deep-dive-section/directives-deep-dive-section.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { ObservablesSectionComponent } from './observables-section/observables-section.component';
 import { RoutingHomeComponent } from './routing-section/routing-home/routing-home.component';
+
 import { RoutingSectionComponent } from './routing-section/routing-section.component';
 import { CanDeactivateGuard } from './routing-section/routing-servers/routing-edit-server/can-deactivate-guard.service';
 import { RoutingEditServerComponent } from './routing-section/routing-servers/routing-edit-server/routing-edit-server.component';
@@ -21,9 +23,9 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 
 const routes: Routes = [
     { path: 'basics', component: BasicsSectionComponent },
-    { path: 'comp-datab-deep-dive', component: CompDatabDeepDiveSectionComponent },
-    { path: 'directives-deep-dive', component: DirectivesDeepDiveSectionComponent },
-    { path: 'services-dependency-injection', component: ServicesDependencyInjectionSectionComponent },
+    { path: 'components', component: CompDatabDeepDiveSectionComponent },
+    { path: 'directives', component: DirectivesDeepDiveSectionComponent },
+    { path: 'services', component: ServicesDependencyInjectionSectionComponent },
     {
         path: 'routing', component: RoutingSectionComponent,
         children: [
@@ -42,14 +44,15 @@ const routes: Routes = [
                 component: RoutingServersComponent,
                 children: [
                     { path: ':id/edit', component: RoutingEditServerComponent, canDeactivate: [CanDeactivateGuard] },
-                    { path: ':id', component: RoutingServerComponent, resolve: {server: RoutingServerResolver} },
+                    { path: ':id', component: RoutingServerComponent, resolve: { server: RoutingServerResolver } },
                 ]
             },
 
         ]
     },
-     { path: 'not-found', component: PageNotFoundComponent },
-     // { path: 'not-found', component: ErrorComponent, data: {message: 'Page not found!'} },
+    { path: 'observables', component: ObservablesSectionComponent },
+    { path: 'not-found', component: PageNotFoundComponent },
+    // { path: 'not-found', component: ErrorComponent, data: {message: 'Page not found!'} },
     { path: '', component: MainPageComponent, pathMatch: 'full' },
     { path: '**', redirectTo: '/not-found' },
 ];
