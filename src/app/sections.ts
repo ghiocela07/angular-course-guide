@@ -7,5 +7,6 @@ export const appSections: AppSection[] = [
     new AppSection(9, 'Services', ' Using Services and Dependency Injection', 'services'),
     new AppSection(11, 'Routing', 'Changing pages with routing', 'routing'),
     new AppSection(13, 'Observables', 'Understanding Observables', 'observables'),
+    new AppSection(15, 'Forms', 'Handling Forms in Angular Apps', 'forms'),
 
 ]

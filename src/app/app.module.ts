@@ -60,6 +60,8 @@ import { ErrorComponent } from './shared/error/error.component';
 import { ObservablesSectionComponent } from './observables-section/observables-section.component';
 import { ObservableUserComponent } from './observables-section/observable-user/observable-user.component';
 import { ObservableHomeComponent } from './observables-section/observable-home/observable-home.component';
+import { SectionHeaderComponent } from './section-header/section-header.component';
+import { FormsSectionComponent } from './forms-section/forms-section.component';
 
 
 @NgModule({
@@ -103,7 +105,9 @@ import { ObservableHomeComponent } from './observables-section/observable-home/o
     ErrorComponent,
     ObservablesSectionComponent,
     ObservableUserComponent,
-    ObservableHomeComponent
+    ObservableHomeComponent,
+    SectionHeaderComponent,
+    FormsSectionComponent
   ],
   imports: [
     AppRoutingModule,
