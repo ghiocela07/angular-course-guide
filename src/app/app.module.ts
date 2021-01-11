@@ -74,6 +74,9 @@ import { PropertyEventBindingRequirementComponent } from './comp-datab-deep-dive
 import { ComponentsRequirementComponent } from './basics-section/practicing-components/components-requirement/components-requirement.component';
 import { DatabindingRequirementComponent } from './basics-section/practicing-databinding/databinding-requirement/databinding-requirement.component';
 import { DirectivesRequirementComponent } from './basics-section/practicing-directives/directives-requirement/directives-requirement.component';
+import { PracticingReactiveFormsComponent } from './forms-section/practicing-reactive-forms/practicing-reactive-forms.component';
+import { ReactiveFormsSolutionComponent } from './forms-section/practicing-reactive-forms/reactive-forms-solution/reactive-forms-solution.component';
+import { ReactiveFormsRequirementComponent } from './forms-section/practicing-reactive-forms/reactive-forms-requirement/reactive-forms-requirement.component';
 
 
 @NgModule({
@@ -129,7 +132,10 @@ import { DirectivesRequirementComponent } from './basics-section/practicing-dire
     PropertyEventBindingRequirementComponent,
     ComponentsRequirementComponent,
     DatabindingRequirementComponent,
-    DirectivesRequirementComponent
+    DirectivesRequirementComponent,
+    PracticingReactiveFormsComponent,
+    ReactiveFormsRequirementComponent,
+    ReactiveFormsSolutionComponent
   ],
   imports: [
     AppRoutingModule,

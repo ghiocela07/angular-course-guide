@@ -1,0 +1,13 @@
+.project-form {
+    display: grid;
+}
+.submit-button {
+    width: fit-content;
+    margin-right: 20px;
+}
+.buttons-div {
+    display: flex;
+}
+.form-field {
+    width: fit-content;
+}

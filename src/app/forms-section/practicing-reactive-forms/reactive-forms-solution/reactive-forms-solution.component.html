@@ -1,0 +1,35 @@
+<form *ngIf="projectForm" class="project-form" [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+    <mat-error *ngIf="projectForm.invalid && projectForm.touched">Please eneter valid data</mat-error>
+
+    <mat-form-field class="form-field">
+        <mat-label>Project Name</mat-label>
+        <input type="text" matInput formControlName="projectName">
+        <mat-error *ngIf="projectForm.get('projectName')?.invalid && projectForm.get('projectName')?.touched">
+            <span *ngIf="isError('projectName','required')">
+                Required field
+            </span>
+            <span *ngIf="isError('projectName','nameIsForbidden')">
+                Invalid field
+            </span>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email">
+        <mat-error *ngIf="projectForm.get('email')?.invalid && projectForm.get('email')?.touched">
+            Invalid field
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+        <mat-label>Project Status</mat-label>
+        <mat-select formControlName="projectStatus">
+            <mat-option *ngFor="let status of projectStatuses" [value]="status">
+                {{status}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="buttons-div">
+        <button mat-raised-button color="primary" class="submit-button" type="submit">Submit</button>
+    </div>
+</form>
