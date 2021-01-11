@@ -1,0 +1,16 @@
+.form-field{
+    display: grid;
+}
+.validation-message{
+    color: red;
+    font-size: x-small;
+    margin-bottom: 20px;
+}
+.subscription-form{
+    width: fit-content;
+}
+.form-invalid-message{
+    color: red;
+}.data-display {
+    margin-top: 20px;
+}

@@ -6,7 +6,7 @@ import { AppSectionService } from '../app-sections.service';
 @Component({
   selector: 'app-section-header',
   templateUrl: './section-header.component.html',
-  styleUrls: ['./section-header.component.css', '../app.component.css']
+  styleUrls: ['./section-header.component.css']
 })
 export class SectionHeaderComponent implements OnInit {
 

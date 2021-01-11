@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-directives-deep-dive-section',
   templateUrl: './directives-deep-dive-section.component.html',
-  styleUrls: ['./directives-deep-dive-section.component.css', '../app.component.css']
+  styleUrls: ['./directives-deep-dive-section.component.css']
 })
 export class DirectivesDeepDiveSectionComponent implements OnInit {
 

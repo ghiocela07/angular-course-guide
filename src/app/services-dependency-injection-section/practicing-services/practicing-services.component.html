@@ -1,33 +1,10 @@
 <mat-card class="mat-elevation-z4 assignment-card">
-    <div class="mat-title">
-        Assignment 5: Practicing Services
+    <div class="mat-subheading-2">
+        <b> Assignment 5: Practicing Services</b>
     </div>
-    <mat-expansion-panel class="expansion-panel">
-        <mat-expansion-panel-header>
-            Requirement
-        </mat-expansion-panel-header>
-        <ng-template matExpansionPanelContent>
-            <mat-list role="list">
-                <mat-list-item role="listitem">Active and unactive users list with a button/link Set to active/inactive
-                </mat-list-item>
-                <mat-list-item role="listitem">This app is using events to set active and unactive')</mat-list-item>
-                <mat-list-item role="listitem">1.Optimize this app by addding UserService which manages the active and
-                    inactive users</mat-list-item>
-                <mat-list-item role="listitem">2.Also add a CounterService hich counts the number of active->inactive
-                    and inactive->active actions
-                </mat-list-item>
-            </mat-list>
-        </ng-template>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel class="expansion-panel">
-        <mat-expansion-panel-header>
-            Solution
-        </mat-expansion-panel-header>
-        <ng-template matExpansionPanelContent>
-            <app-active-users></app-active-users>
-            <app-inactive-users></app-inactive-users>
-            <app-counter></app-counter>
-        </ng-template>
-    </mat-expansion-panel>
+    <app-services-requirement></app-services-requirement>
+    <div class="assignment-solution">
+        <app-active-users></app-active-users>
+        <app-inactive-users></app-inactive-users>
+    </div>
 </mat-card>

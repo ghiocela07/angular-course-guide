@@ -5,7 +5,7 @@ import { AccountsService } from './services/accounts.service';
 @Component({
   selector: 'app-services-dependency-injection-section',
   templateUrl: './services-dependency-injection-section.component.html',
-  styleUrls: ['./services-dependency-injection-section.component.css', '../app.component.css'],
+  styleUrls: ['./services-dependency-injection-section.component.css'],
   providers: [AccountsService]
 })
 export class ServicesDependencyInjectionSectionComponent implements OnInit {

@@ -26,7 +26,29 @@ body {
     background: red;
     color: ivory;
 }
+.section-container {
+    margin: 20px;
+}
 
 .mat-card-header-text {
-    margin: 0 auto!important;
+    margin: 0 auto !important;
+}
+.req-expansion-panel {
+    margin-bottom: 20px !important;
+}
+.practice-card {
+    margin: 20px;
+    padding: 20px;
+    background-color: floralwhite;
+    width: fit-content;
+}
+
+.assignment-card {
+    margin: 20px;
+    padding: 20px;
+    background-color: floralwhite;
+    width: fit-content;
+}
+.assignment-solution {
+    margin-left: 10px;
 }

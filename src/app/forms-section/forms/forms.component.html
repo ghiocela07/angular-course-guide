@@ -1,0 +1,50 @@
+<form class="account-form" (ngSubmit)="onSubmit()" #form="ngForm">
+    <div ngModelGroup="userData" #userData="ngModelGroup">
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input type="text" matInput ngModel name="username" required>
+        </mat-form-field>
+        <button mat-raised-button class="suggest-button" type="button" (click)="suggestUsername()">Suggest an username</button>
+
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input type="email" matInput ngModel name="email" required email #email="ngModel">
+        </mat-form-field>
+        <span *ngIf="!email.valid && email.touched" class="validation-message">Please enter a valid email!</span>
+    </div>
+    <p *ngIf="!userData.valid && userData.touched">User data is invalid!</p>
+    <mat-form-field class="form-field">
+        <mat-label>Secret Questions</mat-label>
+        <mat-select [ngModel]="defaultQuestion" name="secret" >
+            <mat-option value="pet">Your first pet?</mat-option>
+            <mat-option value="teacher">Your first teacher?</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+        <mat-label>Answer</mat-label>
+        <textarea matInput name="questionAnswer" rows="3" cols="4" [(ngModel)]="answer"></textarea>
+    </mat-form-field>
+    <p>Your answer is: {{answer}}</p>
+    <div class="gender-select">
+        <mat-label class="gender-label">Select a gender:</mat-label>
+        <mat-radio-group aria-label="Select an option" class="radio-buttons" *ngFor="let gender of genders"
+            name="gender" ngModel required>
+            <mat-radio-button class="radio-button" [value]="gender">{{gender}}
+            </mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <div class="buttons-div">
+        <button mat-raised-button color="primary" class="submit-button" type="submit"
+            [disabled]="!form.valid">Submit</button>
+        <button mat-raised-button color="accent" class="clear-button" type="button" [disabled]="!form.dirty"
+            (click)="onClear()">Clear</button>
+    </div>
+</form>
+<div *ngIf="submitted" class="data-display">
+    <h3><b>Your data: </b></h3>
+    <p>Username: <b>{{user.username}}</b> </p>
+    <p>Email: <b>{{user.email}}</b> </p>
+    <p>Secret Question: <b>Your first {{user.secretQuestion}}?</b> </p>
+    <p>Answer: <b>{{user.answer}}</b> </p>
+    <p>Gender: <b>{{user.gender}}</b></p>
+</div>

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,6 +16,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import {MatChipsModule} from '@angular/material/chips';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -62,6 +64,16 @@ import { ObservableUserComponent } from './observables-section/observable-user/o
 import { ObservableHomeComponent } from './observables-section/observable-home/observable-home.component';
 import { SectionHeaderComponent } from './section-header/section-header.component';
 import { FormsSectionComponent } from './forms-section/forms-section.component';
+import { FormsComponent } from './forms-section/forms/forms.component';
+import { ReactiveFormsComponent } from './forms-section/reactive-forms/reactive-forms.component';
+import { ParcticingFormsComponent } from './forms-section/parcticing-forms/parcticing-forms.component';
+import { FormsRequirementComponent } from './forms-section/parcticing-forms/forms-requirement/forms-requirement.component';
+import { FormsSolutionComponent } from './forms-section/parcticing-forms/forms-solution/forms-solution.component';
+import { ServicesRequirementComponent } from './services-dependency-injection-section/practicing-services/services-requirement/services-requirement.component';
+import { PropertyEventBindingRequirementComponent } from './comp-datab-deep-dive-section/practicing-property-event-binding/property-event-binding-requirement/property-event-binding-requirement.component';
+import { ComponentsRequirementComponent } from './basics-section/practicing-components/components-requirement/components-requirement.component';
+import { DatabindingRequirementComponent } from './basics-section/practicing-databinding/databinding-requirement/databinding-requirement.component';
+import { DirectivesRequirementComponent } from './basics-section/practicing-directives/directives-requirement/directives-requirement.component';
 
 
 @NgModule({
@@ -107,12 +119,23 @@ import { FormsSectionComponent } from './forms-section/forms-section.component';
     ObservableUserComponent,
     ObservableHomeComponent,
     SectionHeaderComponent,
-    FormsSectionComponent
+    FormsSectionComponent,
+    FormsComponent,
+    ReactiveFormsComponent,
+    ParcticingFormsComponent,
+    FormsRequirementComponent,
+    FormsSolutionComponent,
+    ServicesRequirementComponent,
+    PropertyEventBindingRequirementComponent,
+    ComponentsRequirementComponent,
+    DatabindingRequirementComponent,
+    DirectivesRequirementComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     BrowserAnimationsModule,
     MatInputModule,
@@ -129,6 +152,8 @@ import { FormsSectionComponent } from './forms-section/forms-section.component';
     MatSidenavModule,
     MatIconModule,
     MatSelectModule,
+    MatRadioModule,
+    MatChipsModule,
     FlexLayoutModule
   ],
 

@@ -1,0 +1,36 @@
+.account-form {
+    display: grid;
+}
+.validation-message {
+    color: red;
+}
+.radio-buttons {
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.radio-button {
+    margin-right: -10px;
+}
+.gender-select {
+    display: grid;
+}
+.data-display {
+    margin-top: 20px;
+}
+.submit-button,
+.clear-button {
+    width: fit-content;
+    margin-right: 20px;
+}
+.buttons-div {
+    display: flex;
+}
+.form-field{
+    width: fit-content;
+}
+.suggest-button{
+    display: grid;
+}
+.gender-label{
+    margin-bottom: 20px;
+}

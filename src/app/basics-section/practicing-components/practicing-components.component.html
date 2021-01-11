@@ -1,36 +1,10 @@
 <mat-card class="mat-elevation-z4 assignment-card">
-    <div class="mat-title">
-        Assignment 1: Practicing Components
+
+    <div class="mat-subheading-2">
+        <b> Assignment 1: Practicing Components</b>
     </div>
-    <mat-expansion-panel class="expansion-panel">
-        <mat-expansion-panel-header>
-            Requirement
-        </mat-expansion-panel-header>
-        <ng-template matExpansionPanelContent>
-            <mat-list role="list">
-                <mat-list-item role="listitem">1.Create two new Components (manually or with CLI): WarningAlert and
-                    SuccessAlert.
-                </mat-list-item>
-                <mat-list-item role="listitem">2.Output them beneath each other in the AppComponent.</mat-list-item>
-                <mat-list-item role="listitem">3.Output a warning or success message in the Components</mat-list-item>
-                <mat-list-item role="listitem">4.Style the Components appropriately (maybe some red/ green text?)
-                </mat-list-item>
-            </mat-list>
-            <p>Use external or internal templates and styles!</p>
-            <p>Feel free to create more components, nest them into each other or play around with different types of
-                selectors!
-            </p>
-        </ng-template>
-    </mat-expansion-panel>
 
-    <mat-expansion-panel  class="expansion-panel">
-        <mat-expansion-panel-header>
-            Solution
-        </mat-expansion-panel-header>
-        <ng-template matExpansionPanelContent>
-            <app-success-alert></app-success-alert>
-
-            <app-warning-alert></app-warning-alert>
-        </ng-template>
-    </mat-expansion-panel>
+    <app-components-requirement></app-components-requirement>
+    <app-success-alert></app-success-alert>
+    <app-warning-alert></app-warning-alert>
 </mat-card>

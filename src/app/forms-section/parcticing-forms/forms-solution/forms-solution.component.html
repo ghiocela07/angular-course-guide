@@ -1,0 +1,31 @@
+<form class="subscription-form" (ngSubmit)="onSubmit()" #form="ngForm">
+    <p *ngIf="!form.valid && form.touched" class="form-invalid-message">Form is invalid</p>
+    <mat-form-field class="form-field">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput ngModel name="email" required email #email="ngModel">
+    </mat-form-field>
+    <span *ngIf="!email.valid && email.touched" class="validation-message">Please enter a valid email</span>
+    <mat-form-field class="form-field">
+        <mat-label>Subscription</mat-label>
+        <mat-select [ngModel]="defaultSubscription" name="subscription" #subscription="ngModel">
+            <mat-option value="basic">Basic</mat-option>
+            <mat-option value="advanced">Advanced</mat-option>
+            <mat-option value="pro">Pro</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <span *ngIf="!subscription.valid && subscription.touched" class="validation-message">Please select a
+        subscription</span>
+    <mat-form-field class="form-field">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput ngModel name="password" required password #password="ngModel">
+    </mat-form-field>
+    <span *ngIf="!password.valid && password.touched" class="validation-message">Eneter password</span>
+    <button mat-raised-button color="primary" class="submit-button" type="submit"
+    [disabled]="!form.valid">Submit</button>
+</form>
+<div *ngIf="submitted" class="data-display">
+    <h3><b>Subscription account: </b></h3>
+    <p>Email: <b>{{subscriptionAccount.email}}</b> </p>
+    <p>Subscription: <b>{{subscriptionAccount.subscription}}</b> </p>
+    <p>Password: <b>***</b></p>
+</div>

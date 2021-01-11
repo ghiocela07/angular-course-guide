@@ -1,4 +1,4 @@
-<h2 class="mat-title">Active Users</h2>
+<h3><b>Active Users</b></h3>
 <mat-list >
     <mat-list-item *ngFor="let user of activeUsers; let i=index">
        {{user}} | <a class="set-link" (click)="onSetToInactive(i)"> Set To Inactive</a>

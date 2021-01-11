@@ -7,7 +7,7 @@ import { User } from '../user.model';
 @Component({
   selector: 'app-observables-section',
   templateUrl: './observables-section.component.html',
-  styleUrls: ['./observables-section.component.css', '../app.component.css']
+  styleUrls: ['./observables-section.component.css']
 })
 export class ObservablesSectionComponent implements OnInit, OnDestroy {
 

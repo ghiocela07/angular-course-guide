@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-comp-datab-deep-dive-section',
   templateUrl: './comp-datab-deep-dive-section.component.html',
-  styleUrls: ['./comp-datab-deep-dive-section.component.css', '../app.component.css']
+  styleUrls: ['./comp-datab-deep-dive-section.component.css']
 })
 export class CompDatabDeepDiveSectionComponent implements OnInit {
 

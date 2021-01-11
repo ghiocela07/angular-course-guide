@@ -1,43 +1,14 @@
 <mat-card class=" mat-elevation-z4 assignment-card">
-    <div class="mat-title">
-        Assignment 3: Practicing Directives
+    <div class="mat-subheading-2">
+        <b> Assignment 3: Practicing Directives</b>
     </div>
-    <mat-expansion-panel class="expansion-panel">
-        <mat-expansion-panel-header>
-            Requirement
-        </mat-expansion-panel-header>
-        <ng-template matExpansionPanelContent>
-            <mat-list role="list">
-                <mat-list-item role="listitem">1.Add A button which says 'Display Details'
-                </mat-list-item>
-                <mat-list-item role="listitem">2.Add a paragraph with any content of your choice (e.g. 'Secret Password
-                    =
-                    tuna')</mat-list-item>
-                <mat-list-item role="listitem">3.Toggle the displaying of that paragraph with the button created in the
-                    first step</mat-list-item>
-                <mat-list-item role="listitem">4.Log all button clicks in an array and output that array below the
-                    secret
-                    paragraph (maybe log a timestamp or simply an incrementing number)
-                </mat-list-item>
-                <mat-list-item role="listitem">5.Starting at the 5th log item, give all future log items a blue
-                    background
-                    (via ngStyle) and white color (ngClass)
-                </mat-list-item>
-            </mat-list>
-        </ng-template>
-    </mat-expansion-panel>
+    <app-directives-requirement></app-directives-requirement>
 
-    <mat-expansion-panel class="expansion-panel">
-        <mat-expansion-panel-header>
-            Solution
-        </mat-expansion-panel-header>
-        <ng-template matExpansionPanelContent>
-            <button mat-raised-button color="primary" (click)="onButtonClicked()">Display Details</button>
-            <p *ngIf="buttonClicked">Secret Password = tuna</p>
-            <div *ngFor="let logItem of logItems; let i = index" [ngStyle]='{backgroundColor: getColor(i)}'
-                [ngClass]="{whiteText: getColor(i) === 'blue'}">
-                {{logItem}}
-            </div>
-        </ng-template>
-    </mat-expansion-panel>
+    <button mat-raised-button color="primary" (click)="onButtonClicked()">Display Details</button>
+    <p *ngIf="buttonClicked">Secret Password = tuna</p>
+    <div *ngFor="let logItem of logItems; let i = index" [ngStyle]='{backgroundColor: getColor(i)}'
+        [ngClass]="{whiteText: getColor(i) === 'blue'}">
+        {{logItem}}
+    </div>
+
 </mat-card>
