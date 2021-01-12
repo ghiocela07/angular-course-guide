@@ -9,6 +9,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ObservableHomeComponent } from './observables-section/observable-home/observable-home.component';
 import { ObservableUserComponent } from './observables-section/observable-user/observable-user.component';
 import { ObservablesSectionComponent } from './observables-section/observables-section.component';
+import { PipesSectionComponent } from './pipes-section/pipes-section.component';
 import { RoutingHomeComponent } from './routing-section/routing-home/routing-home.component';
 
 import { RoutingSectionComponent } from './routing-section/routing-section.component';
@@ -59,6 +60,7 @@ const routes: Routes = [
         ]
     },
     { path: 'forms', component: FormsSectionComponent },
+    { path: 'pipes', component: PipesSectionComponent },
     { path: 'not-found', component: PageNotFoundComponent },
     // { path: 'not-found', component: ErrorComponent, data: {message: 'Page not found!'} },
     { path: '', component: MainPageComponent, pathMatch: 'full' },

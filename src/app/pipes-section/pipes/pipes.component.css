@@ -1,0 +1,38 @@
+.badge-status {
+    padding: 1px 9px 2px;
+    font-size: 12.025px;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #ffffff;
+    background-color: rgba(0,0,0,.38);
+    border-radius: 9px;
+    margin-right: 20px;
+}
+.badge-div {
+    position: fixed;
+    right: 5%;
+}
+.server-item {
+    border-radius: 15px;
+    margin: 20px 0px;
+}
+.server-item-success {
+    background: #a8dab5;
+}
+
+.server-item-warning {
+    background: #eab85cd1;
+}
+
+.server-item-danger {
+    background: #fe6c6cb8;
+}
+.server-name{
+    margin-right: 5px;
+}
+.filter-field{
+    margin: 0 10px;
+}
+.app-status{
+    margin-left: 10px;
+}

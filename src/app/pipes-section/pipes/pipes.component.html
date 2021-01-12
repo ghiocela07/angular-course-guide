@@ -1,0 +1,38 @@
+<h3 class="mat-title app-status">App status: {{appStatus | async}}</h3>
+<mat-form-field class="filter-field">
+    <mat-label>Filter</mat-label>
+    <input matInput type="text" [(ngModel)]="filteredStatus" [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of availableStatuses | async" [value]="option">
+            {{option}}
+        </mat-option>
+    </mat-autocomplete>
+</mat-form-field>
+<mat-form-field class="filter-field">
+    <mat-label>Sort by</mat-label>
+    <input matInput type="text" [(ngModel)]="sortField" [matAutocomplete]="auto1">
+    <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
+        <mat-option *ngFor="let option of availableSortFields | async" [value]="option">
+            {{option}}
+        </mat-option>
+    </mat-autocomplete>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="onAddServer()">Add Server</button>
+<mat-list>
+    <mat-list-item *ngFor="let server of servers | filter:filteredStatus:'status' | sort:sortField" class="server-item"
+        [ngClass]="getStatusClasses(server)">
+
+        <span class="badge-status">
+            {{ server.status }}
+        </span>
+        <strong><span class="server-name">{{ server.name | shorten: 15}}</span> </strong>
+        |
+        {{ server.instanceType | uppercase | reverse }}
+        |
+        {{ server.started | date: 'fullDate' | uppercase }}
+
+
+
+
+    </mat-list-item>
+</mat-list>

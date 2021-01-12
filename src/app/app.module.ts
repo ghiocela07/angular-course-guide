@@ -17,7 +17,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
-import {MatChipsModule} from '@angular/material/chips';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -77,6 +78,15 @@ import { DirectivesRequirementComponent } from './basics-section/practicing-dire
 import { PracticingReactiveFormsComponent } from './forms-section/practicing-reactive-forms/practicing-reactive-forms.component';
 import { ReactiveFormsSolutionComponent } from './forms-section/practicing-reactive-forms/reactive-forms-solution/reactive-forms-solution.component';
 import { ReactiveFormsRequirementComponent } from './forms-section/practicing-reactive-forms/reactive-forms-requirement/reactive-forms-requirement.component';
+import { PipesSectionComponent } from './pipes-section/pipes-section.component';
+import { PipesComponent } from './pipes-section/pipes/pipes.component';
+import { PracticingPipesComponent } from './pipes-section/practicing-pipes/practicing-pipes.component';
+import { PipesRequirementComponent } from './pipes-section/practicing-pipes/pipes-requirement/pipes-requirement.component';
+import { PipesSolutionComponent } from './pipes-section/practicing-pipes/pipes-solution/pipes-solution.component';
+import { ShortenPipe } from './pipes-section/pipes/shorten.pipe';
+import { FilterPipe } from './pipes-section/pipes/filter.pipe';
+import { ReversePipe } from './pipes-section/pipes/reverse.pipe';
+import { SortPipe } from './pipes-section/pipes/sort.pipe';
 
 
 @NgModule({
@@ -135,7 +145,16 @@ import { ReactiveFormsRequirementComponent } from './forms-section/practicing-re
     DirectivesRequirementComponent,
     PracticingReactiveFormsComponent,
     ReactiveFormsRequirementComponent,
-    ReactiveFormsSolutionComponent
+    ReactiveFormsSolutionComponent,
+    PipesSectionComponent,
+    PipesComponent,
+    PracticingPipesComponent,
+    PipesRequirementComponent,
+    PipesSolutionComponent,
+    ShortenPipe,
+    FilterPipe,
+    ReversePipe,
+    SortPipe
   ],
   imports: [
     AppRoutingModule,
@@ -160,6 +179,7 @@ import { ReactiveFormsRequirementComponent } from './forms-section/practicing-re
     MatSelectModule,
     MatRadioModule,
     MatChipsModule,
+    MatAutocompleteModule,
     FlexLayoutModule
   ],
 
