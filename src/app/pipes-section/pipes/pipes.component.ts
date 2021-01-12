@@ -9,7 +9,7 @@ export class PipesComponent {
 
   filteredStatus = '';
   sortField = '';
-  sortFields = ['name', 'status', 'instanceType', 'started']
+  sortFields = ['name', 'status', 'instanceType', 'started'];
   statuses = ['stable', 'offline', 'critical'];
   appStatus = new Promise((resolve, reject) => {
     setTimeout(() => {
