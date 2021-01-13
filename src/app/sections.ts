@@ -9,5 +9,6 @@ export const appSections: AppSection[] = [
     new AppSection(13, 'Observables', 'Understanding Observables', 'observables'),
     new AppSection(15, 'Forms', 'Handling Forms in Angular Apps', 'forms'),
     new AppSection(17, 'Pipes', 'Using Pipes to Transform Output', 'pipes'),
+    new AppSection(18, 'Http Requests', 'Making Http Requests', 'http-requests')
 
 ]

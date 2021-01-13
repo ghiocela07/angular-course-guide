@@ -20,12 +20,12 @@ export class PipesComponent {
     setTimeout(() => {
       resolve(this.sortFields);
     }, 2000)
-  });
+  }) as Promise<any[]>;
   availableStatuses = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(this.statuses);
     }, 2000)
-  });
+  }) as Promise<any[]>;
   servers = [
     {
       instanceType: 'medium',

@@ -1,0 +1,24 @@
+.post-form{
+    display: grid;
+    width: 600px;
+    margin-bottom: 20px;
+}
+.div-buttons{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.posts-button{
+    width: fit-content;
+    margin-right: 20px;
+}
+.post-card{
+    margin-bottom: 20px;
+}
+.spinner{
+    margin: 0 auto;
+}
+.error{
+    background-color: #f4433640;
+    padding: 20px;
+    border-radius: 10px;
+}

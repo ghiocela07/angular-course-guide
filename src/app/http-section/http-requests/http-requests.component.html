@@ -1,0 +1,42 @@
+<form #postForm="ngForm" (ngSubmit)="onCreatePost(postForm.value)" class="post-form">
+    <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput type="text" required ngModel name="title">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Content</mat-label>
+        <textarea matInput type="text" rows="10" required ngModel name="content"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!postForm.valid">Send Post</button>
+</form>
+
+<div class="div-buttons">
+    <button mat-raised-button color="accent" class="posts-button" (click)="onFetchPosts()">
+        Fetch Posts
+    </button>
+    <button mat-raised-button color="accent" class="posts-button" [disabled]="loadedPosts.length < 1"
+        (click)="onClearPosts()">
+        Clear Posts
+    </button>
+</div>
+<div>
+    <p *ngIf="loadedPosts.length < 1 && !isFetching">No posts available</p>
+    <div *ngIf="loadedPosts.length >= 1 && !isFetching">
+        <mat-card *ngFor="let post of loadedPosts" class="mat-elevation-z4 post-card">
+            <mat-card-header>
+                <mat-card-title>{{post.title}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>
+                    {{post.content}}
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <mat-spinner *ngIf="isFetching && !error" class="spinner"></mat-spinner>
+    <mat-error class="error" *ngIf="error">
+        <h3><b>An error occured!</b></h3>
+        <p>{{error}}</p>
+        <button mat-raised-button color="warn" (click)="onHandleError()">Ok</button>
+    </mat-error>
+</div>

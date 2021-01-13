@@ -19,10 +19,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BasicsSectionComponent } from './basics-section/basics-section.component';
+
 import { ServerComponent } from './basics-section/server/server.component';
 import { ServersComponent } from './basics-section/servers/servers.component';
 import { SuccessAlertComponent } from './basics-section/success-alert/success-alert.component';
@@ -87,6 +89,11 @@ import { ShortenPipe } from './pipes-section/pipes/shorten.pipe';
 import { FilterPipe } from './pipes-section/pipes/filter.pipe';
 import { ReversePipe } from './pipes-section/pipes/reverse.pipe';
 import { SortPipe } from './pipes-section/pipes/sort.pipe';
+import { HttpSectionComponent } from './http-section/http-section.component';
+import { HttpRequestsComponent } from './http-section/http-requests/http-requests.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './http-section/http-requests/auth-interceptor.service';
+import { LoggingInterceptorService } from './http-section/http-requests/logging-interceptor.service';
 
 
 @NgModule({
@@ -154,13 +161,16 @@ import { SortPipe } from './pipes-section/pipes/sort.pipe';
     ShortenPipe,
     FilterPipe,
     ReversePipe,
-    SortPipe
+    SortPipe,
+    HttpSectionComponent,
+    HttpRequestsComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     CommonModule,
     BrowserAnimationsModule,
     MatInputModule,
@@ -180,9 +190,12 @@ import { SortPipe } from './pipes-section/pipes/sort.pipe';
     MatRadioModule,
     MatChipsModule,
     MatAutocompleteModule,
+    MatProgressSpinnerModule,
     FlexLayoutModule
   ],
-
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
