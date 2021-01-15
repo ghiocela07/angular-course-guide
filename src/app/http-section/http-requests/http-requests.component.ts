@@ -19,40 +19,40 @@ export class HttpRequestsComponent implements OnInit, OnDestroy {
 
   constructor(private http: HttpClient, private postService: PostService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.errorSubscription = this.postService.error.subscribe(errorMessage => {
       this.error = errorMessage;
     });
     this.fetchPosts();
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.errorSubscription?.unsubscribe();
   }
 
-  onCreatePost(postData: Post) {
+  onCreatePost(postData: Post): void {
     // Send Http request
     this.postService.createAndStorePosts(postData.title, postData.content);
-    //TODO: find a better solution for this 
+    // TODO: find a better solution for this
     this.fetchPosts();
 
   }
 
-  onFetchPosts() {
+  onFetchPosts(): void {
     this.fetchPosts();
   }
 
-  onClearPosts() {
+  onClearPosts(): void {
     this.postService.deletePosts().subscribe(() => {
       this.loadedPosts = [];
     });
   }
 
-  onHandleError() {
+  onHandleError(): void {
     this.error = undefined;
   }
 
-  private fetchPosts() {
+  private fetchPosts(): void {
     this.isFetching = true;
     this.postService.fetchPosts().subscribe(posts => {
       this.isFetching = false;

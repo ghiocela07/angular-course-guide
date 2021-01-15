@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth-guard.service';
+import { AuthSectionComponent } from './auth-section/auth-section.component';
 import { BasicsSectionComponent } from './basics-section/basics-section.component';
 import { CompDatabDeepDiveSectionComponent } from './comp-datab-deep-dive-section/comp-datab-deep-dive-section.component';
 import { DirectivesDeepDiveSectionComponent } from './directives-deep-dive-section/directives-deep-dive-section.component';
+import { DynamicComponentsSectionComponent } from './dynamic-components-section/dynamic-components-section.component';
 import { FormsSectionComponent } from './forms-section/forms-section.component';
 import { HttpSectionComponent } from './http-section/http-section.component';
 import { MainPageComponent } from './main-page/main-page.component';
@@ -63,8 +65,10 @@ const routes: Routes = [
     { path: 'forms', component: FormsSectionComponent },
     { path: 'pipes', component: PipesSectionComponent },
     { path: 'http-requests', component: HttpSectionComponent },
+    { path: 'authentication', component: AuthSectionComponent },
+    { path: 'dynamic-components', component: DynamicComponentsSectionComponent },
     { path: 'not-found', component: PageNotFoundComponent },
-    
+
     // { path: 'not-found', component: ErrorComponent, data: {message: 'Page not found!'} },
     { path: '', component: MainPageComponent, pathMatch: 'full' },
     { path: '**', redirectTo: '/not-found' },

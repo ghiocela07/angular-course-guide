@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
@@ -51,7 +51,9 @@ import { PracticingServicesComponent } from './services-dependency-injection-sec
 import { MainPageComponent } from './main-page/main-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ActiveUsersComponent } from './services-dependency-injection-section/practicing-services/active-users/active-users.component';
-import { InactiveUsersComponent } from './services-dependency-injection-section/practicing-services/inactive-users/inactive-users.component';
+import {
+  InactiveUsersComponent
+} from './services-dependency-injection-section/practicing-services/inactive-users/inactive-users.component';
 import { CounterComponent } from './services-dependency-injection-section/practicing-services/counter/counter.component';
 import { RoutingSectionComponent } from './routing-section/routing-section.component';
 import { RoutingHomeComponent } from './routing-section/routing-home/routing-home.component';
@@ -94,6 +96,8 @@ import { HttpRequestsComponent } from './http-section/http-requests/http-request
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './http-section/http-requests/auth-interceptor.service';
 import { LoggingInterceptorService } from './http-section/http-requests/logging-interceptor.service';
+import { AuthSectionComponent } from './auth-section/auth-section.component';
+import { DynamicComponentsSectionComponent } from './dynamic-components-section/dynamic-components-section.component';
 
 
 @NgModule({
@@ -163,7 +167,9 @@ import { LoggingInterceptorService } from './http-section/http-requests/logging-
     ReversePipe,
     SortPipe,
     HttpSectionComponent,
-    HttpRequestsComponent
+    HttpRequestsComponent,
+    AuthSectionComponent,
+    DynamicComponentsSectionComponent
   ],
   imports: [
     AppRoutingModule,
@@ -196,6 +202,7 @@ import { LoggingInterceptorService } from './http-section/http-requests/logging-
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptorService, multi: true }],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

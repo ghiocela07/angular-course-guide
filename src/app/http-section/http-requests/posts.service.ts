@@ -1,20 +1,21 @@
-import { HttpClient, HttpEventType, HttpHeaders, HttpParams } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Subject, throwError } from "rxjs";
-import { map, catchError, tap } from "rxjs/operators";
-import { Post } from "./post.model";
+import { HttpClient, HttpEventType, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, Subject, throwError } from 'rxjs';
+import { map, catchError, tap } from 'rxjs/operators';
+import { Post } from './post.model';
 
 @Injectable({ providedIn: 'root' })
 export class PostService {
 
     error = new Subject<string>();
+
     constructor(private http: HttpClient) { }
 
-    createAndStorePosts(title: string, content: string) {
+    createAndStorePosts(title: string, content: string): void {
         const postData: Post = {
-            title: title,
-            content: content
-        }
+            title,
+            content
+        };
         this.http
             .post('https://my-first-app-a35ea-default-rtdb.firebaseio.com/posts.json', postData, {
                 observe: 'response'
@@ -26,10 +27,11 @@ export class PostService {
             });
     }
 
-    fetchPosts() {
+    fetchPosts(): Observable<Post[]> | Observable<never> {
         let searchParams = new HttpParams();
         searchParams = searchParams.append('print', 'pretty');
-        searchParams = searchParams.append('custom', 'key')
+        searchParams = searchParams.append('custom', 'key');
+
         return this.http
             .get<{ [key: string]: Post }>('https://my-first-app-a35ea-default-rtdb.firebaseio.com/posts.json', {
                 headers: new HttpHeaders({ 'Custom-Header': 'Hello' }),
@@ -44,13 +46,14 @@ export class PostService {
                         postsArray.push({ ...responseData[key], id: key });
                     }
                 }
+
                 return postsArray;
             }), catchError(errorRes => {
                 return throwError(errorRes);
             }));
     }
 
-    deletePosts() {
+    deletePosts(): Observable<any> {
         return this.http.delete('https://my-first-app-a35ea-default-rtdb.firebaseio.com/posts.json', {
             observe: 'events',
             responseType: 'text'
