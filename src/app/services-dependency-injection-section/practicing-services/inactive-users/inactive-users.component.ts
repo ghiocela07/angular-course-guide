@@ -9,13 +9,14 @@ import { UsersService } from '../services/users.service';
 export class InactiveUsersComponent implements OnInit {
 
   inactiveUsers: string[] = [];
+
   constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
     this.inactiveUsers = this.usersService.inactiveUsers;
   }
 
-  onSetToActive(id: number) {
+  onSetToActive(id: number): void {
     this.usersService.setToActive(id);
   }
 

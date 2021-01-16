@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable, Output } from "@angular/core";
+import { EventEmitter, Injectable, Output } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class CounterService {
@@ -7,12 +7,12 @@ export class CounterService {
     activeToInactiveCounter = 0;
     inactiveToActiveCounter = 0;
 
-    incremenetActiveToInactive() {
+    incremenetActiveToInactive(): void {
         this.activeToInactiveCounter++;
         this.counterChanged.emit();
     }
 
-    incremenetInactiveToActive() {
+    incremenetInactiveToActive(): void {
         this.inactiveToActiveCounter++;
         this.counterChanged.emit();
     }

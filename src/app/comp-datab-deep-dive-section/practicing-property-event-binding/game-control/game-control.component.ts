@@ -10,7 +10,8 @@ export class GameControlComponent implements OnInit {
   @Output()
   numberEmitted = new EventEmitter<number>();
   interval: any;
-  lastNumber: number = 0;
+  lastNumber = 0;
+
   constructor() { }
 
   ngOnInit(): void {}
@@ -23,7 +24,7 @@ export class GameControlComponent implements OnInit {
   }
 
   onStopGame(): void {
-    clearInterval(this.interval)
+    clearInterval(this.interval);
   }
 
 }

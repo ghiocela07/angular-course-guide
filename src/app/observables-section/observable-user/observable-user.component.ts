@@ -9,7 +9,7 @@ import { AppUsersService } from 'src/app/app-users.service';
 })
 export class ObservableUserComponent implements OnInit {
 
-  id: number = -1;
+  id = -1;
 
   constructor(private route: ActivatedRoute, private usersService: AppUsersService) {
   }

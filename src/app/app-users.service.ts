@@ -1,5 +1,5 @@
-import { EventEmitter, Injectable } from "@angular/core";
-import { User } from "./user.model";
+import { EventEmitter, Injectable } from '@angular/core';
+import { User } from './user.model';
 import { Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -12,7 +12,7 @@ export class AppUsersService {
 
     activatedUserEmitter = new Subject<boolean>();
 
-    getUsers() {
+    getUsers(): User[] {
         return this.users;
     }
 }

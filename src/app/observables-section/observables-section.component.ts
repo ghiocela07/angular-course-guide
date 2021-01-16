@@ -14,13 +14,14 @@ export class ObservablesSectionComponent implements OnInit, OnDestroy {
   userActivated = false;
   users: User[] = [];
   activateUserSubscription: Subscription | undefined;
+
   constructor(private router: Router, private usersService: AppUsersService) { }
 
   ngOnInit(): void {
     this.users = this.usersService.getUsers();
     this.usersService.activatedUserEmitter.subscribe((didActivate: boolean) => {
       this.userActivated = didActivate;
-    })
+    });
   }
 
   navigateBackToMain() {

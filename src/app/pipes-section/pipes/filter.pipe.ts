@@ -10,16 +10,17 @@ export class FilterPipe implements PipeTransform {
     if (value.length === 0) {
       return value;
     }
-    if(filterString === ''){
+    if (filterString === ''){
       return value;
     }
-    let result = [];
+    const result = [];
     for (const item of value) {
 
       if (item[propName] === filterString) {
         result.push(item);
       }
     }
+
     return result;
   }
 

@@ -13,11 +13,13 @@ export class RoutingHomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   onLoadServers(id: number) {
     // complex actions
     // navigate to servers
     this.router.navigate(['routing/servers', id, 'edit'], { queryParams: { allowEdit: '1' }, fragment: 'loading' });
   }
+
   isLoggedIn() {
     return this.authService.loggedIn;
   }

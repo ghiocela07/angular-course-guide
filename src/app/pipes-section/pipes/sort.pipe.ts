@@ -9,6 +9,7 @@ export class SortPipe implements PipeTransform {
     if (propName === '') {
       return value;
     }
+
     return value.sort((v1: any, v2: any) => {
       if (v1[propName] > v2[propName]) {
         return 1;

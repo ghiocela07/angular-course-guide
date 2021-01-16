@@ -10,18 +10,19 @@ import { User } from '../../../user.model';
 })
 export class UserComponent implements OnInit, OnDestroy {
 
-  user: User | undefined
+  user: User | undefined;
   paramsSubscription: Subscription | undefined;
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.user = new User(
-      this.route.snapshot.params['id'],
-      this.route.snapshot.params['name']
+      this.route.snapshot.params.id,
+      this.route.snapshot.params.name
     );
     this.route.params.subscribe(
       (params: Params) => {
-        this.user = new User(params['id'], params['name']);
+        this.user = new User(params.id, params.name);
       });
   }
 

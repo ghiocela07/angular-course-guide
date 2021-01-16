@@ -14,17 +14,17 @@ export class PipesComponent {
   appStatus = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('stable');
-    }, 2000)
+    }, 2000);
   });
   availableSortFields = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(this.sortFields);
-    }, 2000)
+    }, 2000);
   }) as Promise<any[]>;
   availableStatuses = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(this.statuses);
-    }, 2000)
+    }, 2000);
   }) as Promise<any[]>;
   servers = [
     {
@@ -52,6 +52,7 @@ export class PipesComponent {
       started: new Date(15, 1, 2017)
     }
   ];
+
   getStatusClasses(server: { instanceType: string, name: string, status: string, started: Date }) {
     return {
       'server-item-success': server.status === 'stable',
@@ -67,6 +68,6 @@ export class PipesComponent {
       status: 'critical',
       started: new Date(15, 1, 2017)
 
-    })
+    });
   }
 }

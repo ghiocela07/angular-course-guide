@@ -10,11 +10,13 @@ import { appSections } from '../sections';
 export class MainPageComponent implements OnInit {
 
   appSections =  appSections;
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-  navigateTo(path: string) {
+
+  navigateTo(path: string): void {
     this.router.navigateByUrl(path);
   }
 

@@ -16,6 +16,7 @@ export class FormsSolutionComponent implements OnInit {
     subscription: '',
     password: ''
   };
+
   constructor() { }
 
   ngOnInit(): void {

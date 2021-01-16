@@ -11,14 +11,15 @@ export class DirectivesDeepDiveSectionComponent implements OnInit {
   // numbers = [1, 2, 3, 4, 5];
   oddNumbers = [1, 3, 5];
   evenNumbers = [2, 4];
-  onlyOdd: boolean = false;
+  onlyOdd = false;
   value = 10;
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  
+
   navigateBackToMain() {
     this.router.navigateByUrl('');
   }

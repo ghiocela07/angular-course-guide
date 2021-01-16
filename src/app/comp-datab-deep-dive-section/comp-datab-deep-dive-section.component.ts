@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class CompDatabDeepDiveSectionComponent implements OnInit {
 
   serverElements = [{ type: 'server', name: 'Test Server', content: 'Just a test server' }];
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -38,7 +39,7 @@ export class CompDatabDeepDiveSectionComponent implements OnInit {
   onDestroyFirst(): void {
     this.serverElements.splice(0, 1);
   }
-  
+
   navigateBackToMain() {
     this.router.navigateByUrl('');
   }

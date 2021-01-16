@@ -1,6 +1,6 @@
 import { templateSourceUrl } from '@angular/compiler';
 import { Component } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackBarService } from 'src/app/shared/snack-bar.service';
 
 @Component({
     selector: 'app-success-alert',
@@ -8,12 +8,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     styleUrls: ['./success-alert.component.css']
 })
 export class SuccessAlertComponent {
-    constructor(private snackBar: MatSnackBar) { }
+    constructor(private snackBarService: SnackBarService) { }
 
     openSnackBar(message: string, action: string): void {
-        this.snackBar.open(message, action, {
-            duration: 50000,
-            panelClass: 'success-snackbar'
-        });
+        this.snackBarService.openSuccessSnackBar(message, action);
     }
 }

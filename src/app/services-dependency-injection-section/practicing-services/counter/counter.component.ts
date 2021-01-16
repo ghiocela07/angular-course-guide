@@ -8,8 +8,9 @@ import { CounterService } from '../services/counter.service';
 })
 export class CounterComponent implements OnInit {
 
-  activeToInactiveCount: number = 0;
-  inactiveToActiveCount: number = 0;
+  activeToInactiveCount = 0;
+  inactiveToActiveCount = 0;
+
   constructor(private counterService: CounterService) { }
 
   ngOnInit(): void {

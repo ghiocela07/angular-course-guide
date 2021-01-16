@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackBarService } from 'src/app/shared/snack-bar.service';
 import { AccountsService } from '../services/accounts.service';
 import { LoggingService } from '../services/logging.service';
 
@@ -11,27 +11,22 @@ import { LoggingService } from '../services/logging.service';
 })
 export class NewAccountComponent implements OnInit {
 
-  selectedStatus: string = 'none';
+  selectedStatus = 'none';
 
-  constructor(// private loggingService: LoggingService, 
+  constructor(// private loggingService: LoggingService,
     private accountsService: AccountsService,
-    private snackBar: MatSnackBar) {
+    private snackBarService: SnackBarService) {
     this.accountsService.statusUpdated.subscribe(
-      (status: string) => this.openSnackBar('Status: ' + status, 'Ok')
+      (status: string) => this.snackBarService.openSuccessSnackBar('Status: ' + status, 'Ok')
     );
   }
 
   ngOnInit(): void {
 
   }
-  onCreateAccount(accountName: string) {
+
+  onCreateAccount(accountName: string): void {
     this.accountsService.addAccount(accountName, this.selectedStatus);
     // this.loggingService.logStatusChange(this.selectedStatus);
-  }
-
-  openSnackBar(message: string, action: string): void {
-    this.snackBar.open(message, action, {
-      duration: 50000
-    });
   }
 }

@@ -10,7 +10,8 @@ import { AppSectionService } from '../app-sections.service';
 })
 export class SectionHeaderComponent implements OnInit {
 
-  section: AppSection | undefined
+  section: AppSection | undefined;
+
   constructor(private router: Router, private route: ActivatedRoute, private sectionService: AppSectionService) { }
 
   ngOnInit(): void {

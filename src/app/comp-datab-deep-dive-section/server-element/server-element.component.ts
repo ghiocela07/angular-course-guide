@@ -8,7 +8,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 export class ServerElementComponent { // implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
   @Input() element: { type: string; name: string; content: string; } = { type: '', name: '', content: '' };
-  @Input() name: string = '';
+  @Input() name = '';
   @ViewChild('heading') header: ElementRef | undefined;
   @ContentChild('contentDiv') content: ElementRef | undefined;
 

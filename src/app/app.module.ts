@@ -20,6 +20,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -98,6 +99,7 @@ import { AuthInterceptorService } from './http-section/http-requests/auth-interc
 import { LoggingInterceptorService } from './http-section/http-requests/logging-interceptor.service';
 import { AuthSectionComponent } from './auth-section/auth-section.component';
 import { DynamicComponentsSectionComponent } from './dynamic-components-section/dynamic-components-section.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({
@@ -169,7 +171,8 @@ import { DynamicComponentsSectionComponent } from './dynamic-components-section/
     HttpSectionComponent,
     HttpRequestsComponent,
     AuthSectionComponent,
-    DynamicComponentsSectionComponent
+    DynamicComponentsSectionComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     AppRoutingModule,
@@ -197,6 +200,7 @@ import { DynamicComponentsSectionComponent } from './dynamic-components-section/
     MatChipsModule,
     MatAutocompleteModule,
     MatProgressSpinnerModule,
+    MatDialogModule,
     FlexLayoutModule
   ],
   providers: [

@@ -11,6 +11,7 @@ import { AccountsService } from './services/accounts.service';
 export class ServicesDependencyInjectionSectionComponent implements OnInit {
 
   accounts: { name: string, status: string }[] = [];
+
   constructor(private accountService: AccountsService, private router: Router) { }
 
   ngOnInit(): void {
@@ -18,7 +19,7 @@ export class ServicesDependencyInjectionSectionComponent implements OnInit {
   }
 
 
-  navigateBackToMain() {
+  navigateBackToMain(): void {
     this.router.navigateByUrl('');
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackBarService } from 'src/app/shared/snack-bar.service';
 
 @Component({
   selector: 'app-warning-alert',
@@ -7,13 +7,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./warning-alert.component.css']
 })
 export class WarningAlertComponent {
-  constructor(private snackBar: MatSnackBar) { }
+  constructor(private snackBarService: SnackBarService) { }
 
   openSnackBar(message: string, action: string): void {
-    this.snackBar.open(message, action, {
-      duration: 50000,
-      panelClass: 'warning-snackbar'
-    });
+    this.snackBarService.openWarningSnackBar(message, action);
   }
 
 }

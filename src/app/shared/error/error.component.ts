@@ -8,13 +8,14 @@ import { ActivatedRoute, Data } from '@angular/router';
 })
 export class ErrorComponent implements OnInit {
 
-  errorMessage: string = '';
+  errorMessage = '';
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     // this.errorMessage = this.route.snapshot.data['message'];
     this.route.data.subscribe((data: Data) => {
-      this.errorMessage = data['message'];
+      this.errorMessage = data.message;
     });
   }
 

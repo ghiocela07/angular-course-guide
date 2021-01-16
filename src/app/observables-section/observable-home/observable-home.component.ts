@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { interval, Observable, Subscription } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
+import { SnackBarService } from 'src/app/shared/snack-bar.service';
 
 @Component({
   selector: 'app-observable-home',
@@ -13,13 +13,14 @@ export class ObservableHomeComponent implements OnInit, OnDestroy {
 
   // private firstObservableSubscripton: Subscription | undefined;
   private customIntervalObservableSubscription: Subscription | undefined;
-  constructor(private snackBar: MatSnackBar) { }
+
+  constructor(private snackBarService: SnackBarService) { }
 
   ngOnInit(): void {
     // this.firstObservableSubscripton = interval(1000).subscribe(count => {
     //   console.log(count);
     // });
-    const customIntervalObservable = Observable.create((observer: any) => {
+    const customIntervalObservable = new Observable((observer: any) => {
       let count = 0;
       setInterval(() => {
         observer.next(count);
@@ -31,7 +32,7 @@ export class ObservableHomeComponent implements OnInit, OnDestroy {
 
         }
         count++;
-      }, 1000)
+      }, 1000);
     });
 
     const observableOperator = customIntervalObservable.pipe(filter((data: any) => {
@@ -43,13 +44,13 @@ export class ObservableHomeComponent implements OnInit, OnDestroy {
     this.customIntervalObservableSubscription = observableOperator.subscribe((data: any) => {
       console.log(data);
     }, (error: any) => {
-      this.openErrorSnackBar(error.message, 'Ok');
+      this.snackBarService.openErrorSnackBar(error.message, 'Ok');
     }, () => {
       console.log('Completed!');
-    })
+    });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     // if (this.firstObservableSubscripton) {
     //   this.firstObservableSubscripton.unsubscribe();
     // }
@@ -57,12 +58,4 @@ export class ObservableHomeComponent implements OnInit, OnDestroy {
       this.customIntervalObservableSubscription.unsubscribe();
     }
   }
-
-  openErrorSnackBar(message: string, action: string): void {
-    this.snackBar.open(message, action, {
-      duration: 50000,
-      panelClass: 'error-snackbar'
-    });
-  }
-
 }

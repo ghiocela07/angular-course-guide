@@ -10,14 +10,15 @@ import { RoutingServersService } from '../routing-servers.service';
 })
 export class RoutingServerComponent implements OnInit {
   server: RoutingServer | undefined;
+
   constructor(private serversService: RoutingServersService,
-    private route: ActivatedRoute,
-    private router: Router) { }
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.route.data.subscribe(
       (data: Data) => {
-        this.server = data['server'];
+        this.server = data.server;
       });
     // const id = +this.route.snapshot.params['id'];
     // this.server = this.serversService.getServer(id);
@@ -35,7 +36,7 @@ export class RoutingServerComponent implements OnInit {
   }
 
   onEdit() {
-    this.router.navigate(['edit'], { relativeTo: this.route, queryParamsHandling: 'preserve' })
+    this.router.navigate(['edit'], { relativeTo: this.route, queryParamsHandling: 'preserve' });
   }
 
 }

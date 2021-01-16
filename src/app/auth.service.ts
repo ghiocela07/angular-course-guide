@@ -1,8 +1,8 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-    loggedIn: boolean = false;
+    loggedIn = false;
 
     isAuthenticared(): Promise<any> {
         const promise = new Promise(
@@ -11,13 +11,15 @@ export class AuthService {
                     resolve(this.loggedIn);
                 }, 800);
             });
+
         return promise;
     }
-    login() {
+
+    login(): void {
         this.loggedIn = true;
     }
 
-    logout() {
+    logout(): void {
         this.loggedIn = false;
     }
 }

@@ -20,14 +20,15 @@ export class FormsComponent implements OnInit {
     secretQuestion: '',
     answer: '',
     gender: ''
-  }
+  };
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   suggestUsername() {
-    const suggestedName = "Superuser";
+    const suggestedName = 'Superuser';
     // First approach
     // this.singupForm?.setValue({
     //   userData: {
@@ -39,7 +40,7 @@ export class FormsComponent implements OnInit {
     //   gender: 'male'
     // });
 
-    //Better approach
+    // Better approach
     this.singupForm?.form.patchValue({
       userData: {
         username: suggestedName

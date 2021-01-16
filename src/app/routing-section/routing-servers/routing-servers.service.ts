@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core";
-import { RoutingServer } from "./routing-server.model";
+import { Injectable } from '@angular/core';
+import { RoutingServer } from './routing-server.model';
 
 @Injectable({ providedIn: 'root' })
 export class RoutingServersService {

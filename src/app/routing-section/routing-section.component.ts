@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class RoutingSectionComponent implements OnInit {
 
   activeLink = '';
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class PracticingDatabindingComponent implements OnInit {
 
   username = '';
+
   constructor() { }
 
   ngOnInit(): void {

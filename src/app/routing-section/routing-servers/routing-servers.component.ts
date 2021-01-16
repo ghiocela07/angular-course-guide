@@ -16,7 +16,8 @@ export class RoutingServersComponent implements OnInit {
   serversList: MatSelectionList | undefined;
 
   selectedServer: RoutingServer | undefined;
-  servers: RoutingServer[] = []
+  servers: RoutingServer[] = [];
+
   constructor(private serversService: RoutingServersService,
               private router: Router,
               private route: ActivatedRoute) { }

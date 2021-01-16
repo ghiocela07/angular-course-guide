@@ -16,6 +16,7 @@ export class UsersComponent implements OnInit {
 
   selectedUser: User | undefined;
   users: User[] = [];
+
   constructor(private usersService: AppUsersService) { }
 
   ngOnInit() {

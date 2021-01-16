@@ -6,12 +6,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ReversePipe implements PipeTransform {
 
   transform(value: any) {
-   return value.split("").reverse().join("");
+   return value.split('').reverse().join('');
   }
 
   // private reverse(stringToReverse: string){
   //   const stringToReverse.split('');
-  //   const reverseString = 
+  //   const reverseString =
   // }
 
 }

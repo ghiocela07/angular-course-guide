@@ -11,14 +11,15 @@ import { LoggingService } from '../services/logging.service';
 export class AccountComponent implements OnInit {
 
   @Input() account: { name: string, status: string } | undefined;
-  @Input() id: number = -1
+  @Input() id = -1;
+
   constructor(// private loggingService: LoggingService,
     private accountsService: AccountsService) { }
 
   ngOnInit(): void {
   }
 
-  onSetTo(status: string) {
+  onSetTo(status: string): void {
     this.accountsService.updateStatus(this.id, status);
     // this.loggingService.logStatusChange(status);
     this.accountsService.statusUpdated.emit(status);

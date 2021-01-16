@@ -10,6 +10,7 @@ export class PracticingDirectivesComponent implements OnInit {
   displayRequirement = false;
   buttonClicked = false;
   logItems: string[] = [];
+
   constructor() { }
 
   ngOnInit(): void {

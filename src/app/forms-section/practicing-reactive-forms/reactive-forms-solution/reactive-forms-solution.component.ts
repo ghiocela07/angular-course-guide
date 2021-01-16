@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, AsyncValidatorFn, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms-solution',
@@ -8,39 +8,55 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ReactiveFormsSolutionComponent implements OnInit {
 
-  projectForm: FormGroup | undefined
+  projectForm: FormGroup | undefined;
   forbiddenProjectNames = ['Test'];
   projectStatuses = ['Stable', 'Critical', 'Finished'];
+
   constructor() { }
 
   ngOnInit(): void {
     this.initializeForm();
   }
 
-  onSubmit() {
+  onSubmit(): void {
     console.log(this.projectForm);
   }
 
-  isError(controlName: string, type: string) {
+  isError(controlName: string, type: string): boolean | undefined {
     const control = this.projectForm?.get(controlName);
+
     return control?.hasError(type);
   }
 
-  initializeForm() {
+  initializeForm(): void {
     this.projectForm = new FormGroup({
-      'projectName': new FormControl(null, [Validators.required, this.forbiddenNames.bind(this)]),
-      'email': new FormControl(null, [Validators.required, Validators.email]),
-      'projectStatus': new FormControl(null)
+      // projectName: new FormControl(null, [Validators.required, this.forbiddenNames.bind(this)]),
+      projectName: new FormControl(null, Validators.required, this.forbiddenNamesAsync()),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      projectStatus: new FormControl(null)
     });
   }
 
   forbiddenNames(control: FormControl): { nameIsForbidden: boolean } | null {
     if (this.forbiddenProjectNames.indexOf(control.value) !== -1) {
-      return { 'nameIsForbidden': true }
+      return { nameIsForbidden: true };
     }
+
     return null;
   }
 
-  //TODO: Add async validation?
-
+  forbiddenNamesAsync(): AsyncValidatorFn {
+    return (control: AbstractControl): Promise<ValidationErrors | null> => {
+      return new Promise<ValidationErrors | null>(
+        (resolve, reject) => {
+          setTimeout(() => {
+            if (this.forbiddenProjectNames.indexOf(control.value) !== -1) {
+              resolve({ nameIsForbidden: true });
+            } else {
+              resolve(null);
+            }
+          }, 1500);
+        });
+    };
+  }
 }

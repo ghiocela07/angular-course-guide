@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class PracticingPropertyEventBindingComponent implements OnInit {
   numbers: number[] = [];
   oddNumbers: number[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
