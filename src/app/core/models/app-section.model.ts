@@ -1,4 +1,3 @@
-
 export class AppSection {
     public id: number;
     public title: string;

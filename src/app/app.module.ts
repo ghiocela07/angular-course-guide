@@ -22,6 +22,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 
+
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BasicsSectionComponent } from './basics-section/basics-section.component';
@@ -44,13 +45,13 @@ import { EvenComponent } from './comp-datab-deep-dive-section/practicing-propert
 import { DirectivesDeepDiveSectionComponent } from './directives-deep-dive-section/directives-deep-dive-section.component';
 import { BasicHighlightDirecive } from './directives-deep-dive-section/basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './directives-deep-dive-section/better-highlight/better-highlight.directive';
-import { UnlessDirective } from './unless.directive';
+import { UnlessDirective } from './shared/unless.directive';
 import { ServicesDependencyInjectionSectionComponent } from './services-dependency-injection-section/services-dependency-injection-section.component';
 import { AccountComponent } from './services-dependency-injection-section/account/account.component';
 import { NewAccountComponent } from './services-dependency-injection-section/new-account/new-account.component';
 import { PracticingServicesComponent } from './services-dependency-injection-section/practicing-services/practicing-services.component';
 import { MainPageComponent } from './main-page/main-page.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { CoreModule, FlexLayoutModule } from '@angular/flex-layout';
 import { ActiveUsersComponent } from './services-dependency-injection-section/practicing-services/active-users/active-users.component';
 import {
   InactiveUsersComponent
@@ -63,12 +64,10 @@ import { RoutingServerComponent } from './routing-section/routing-servers/routin
 import { RoutingEditServerComponent } from './routing-section/routing-servers/routing-edit-server/routing-edit-server.component';
 import { UsersComponent } from './routing-section/routing-users/routing-users.component';
 import { UserComponent } from './routing-section/routing-users/routing-user/routing-user.component';
-import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
-import { ErrorComponent } from './shared/error/error.component';
 import { ObservablesSectionComponent } from './observables-section/observables-section.component';
 import { ObservableUserComponent } from './observables-section/observable-user/observable-user.component';
 import { ObservableHomeComponent } from './observables-section/observable-home/observable-home.component';
-import { SectionHeaderComponent } from './section-header/section-header.component';
+import { SectionHeaderComponent } from './shared/section-header/section-header.component';
 import { FormsSectionComponent } from './forms-section/forms-section.component';
 import { FormsComponent } from './forms-section/forms/forms.component';
 import { ReactiveFormsComponent } from './forms-section/reactive-forms/reactive-forms.component';
@@ -88,124 +87,63 @@ import { PipesComponent } from './pipes-section/pipes/pipes.component';
 import { PracticingPipesComponent } from './pipes-section/practicing-pipes/practicing-pipes.component';
 import { PipesRequirementComponent } from './pipes-section/practicing-pipes/pipes-requirement/pipes-requirement.component';
 import { PipesSolutionComponent } from './pipes-section/practicing-pipes/pipes-solution/pipes-solution.component';
-import { ShortenPipe } from './pipes-section/pipes/shorten.pipe';
-import { FilterPipe } from './pipes-section/pipes/filter.pipe';
-import { ReversePipe } from './pipes-section/pipes/reverse.pipe';
-import { SortPipe } from './pipes-section/pipes/sort.pipe';
+import { ShortenPipe } from './pipes-section/pipe/shorten.pipe';
+import { FilterPipe } from './pipes-section/pipe/filter.pipe';
+import { ReversePipe } from './pipes-section/pipe/reverse.pipe';
+import { SortPipe } from './pipes-section/pipe/sort.pipe';
 import { HttpSectionComponent } from './http-section/http-section.component';
 import { HttpRequestsComponent } from './http-section/http-requests/http-requests.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptorService } from './http-section/http-requests/auth-interceptor.service';
-import { LoggingInterceptorService } from './http-section/http-requests/logging-interceptor.service';
+import { AuthInterceptorService } from './core/services/interceptors/auth-interceptor.service';
+import { LoggingInterceptorService } from './core/services/interceptors/logging-interceptor.service';
 import { AuthSectionComponent } from './auth-section/auth-section.component';
 import { DynamicComponentsSectionComponent } from './dynamic-components-section/dynamic-components-section.component';
-import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { ModulesSectionComponent } from './modules-section/modules-section.component';
+import { SharedModule } from './shared/shared.module';
+import { AuthSectionModule } from './auth-section/auth-section.module';
+import { ModulesSectionModule } from './modules-section/modules-section.module';
+import { DynamicComponentsSectionModule } from './dynamic-components-section/dynamic-components-section.module';
+import { HttpSectionModule } from './http-section/http-section.module';
+import { ServicesSectionModule } from './services-dependency-injection-section/services-section.module';
+import { PipesSectionModule } from './pipes-section/pipes-section.module';
+import { FormsSectionModule } from './forms-section/forms-section.module';
+import { ObservablesSectionModule } from './observables-section/observables-section.module';
+import { RoutingSectionModule } from './routing-section/routing-section.model';
+import { DirectivesSectionModule } from './directives-deep-dive-section/directives-section.module';
+import { ComponentsSectionModule } from './comp-datab-deep-dive-section/components-section.module';
+import { BasicsSectionModule } from './basics-section/basics-section.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ServerComponent,
-    ServersComponent,
-    SuccessAlertComponent,
-    WarningAlertComponent,
-    PracticingComponentsComponent,
-    PracticingDatabindingComponent,
-    PracticingDirectivesComponent,
-    BasicsSectionComponent,
-    CompDatabDeepDiveSectionComponent,
-    CockpitComponent,
-    ServerElementComponent,
-    PracticingPropertyEventBindingComponent,
-    GameControlComponent,
-    OddComponent,
-    EvenComponent,
-    DirectivesDeepDiveSectionComponent,
-    BasicHighlightDirecive,
-    BetterHighlightDirective,
-    UnlessDirective,
-    ServicesDependencyInjectionSectionComponent,
-    AccountComponent,
-    NewAccountComponent,
-    PracticingServicesComponent,
     MainPageComponent,
-    ActiveUsersComponent,
-    InactiveUsersComponent,
-    CounterComponent,
-    RoutingSectionComponent,
-    RoutingHomeComponent,
-    RoutingServersComponent,
-    RoutingServerComponent,
-    RoutingEditServerComponent,
-    UsersComponent,
-    UserComponent,
-    PageNotFoundComponent,
-    ErrorComponent,
-    ObservablesSectionComponent,
-    ObservableUserComponent,
-    ObservableHomeComponent,
-    SectionHeaderComponent,
-    FormsSectionComponent,
-    FormsComponent,
-    ReactiveFormsComponent,
-    ParcticingFormsComponent,
-    FormsRequirementComponent,
-    FormsSolutionComponent,
-    ServicesRequirementComponent,
-    PropertyEventBindingRequirementComponent,
-    ComponentsRequirementComponent,
-    DatabindingRequirementComponent,
-    DirectivesRequirementComponent,
-    PracticingReactiveFormsComponent,
-    ReactiveFormsRequirementComponent,
-    ReactiveFormsSolutionComponent,
-    PipesSectionComponent,
-    PipesComponent,
-    PracticingPipesComponent,
-    PipesRequirementComponent,
-    PipesSolutionComponent,
-    ShortenPipe,
-    FilterPipe,
-    ReversePipe,
-    SortPipe,
-    HttpSectionComponent,
-    HttpRequestsComponent,
-    AuthSectionComponent,
-    DynamicComponentsSectionComponent,
-    ConfirmationDialogComponent
+    PageNotFoundComponent
+
+
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    CommonModule,
     BrowserAnimationsModule,
-    MatInputModule,
-    MatSliderModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatSnackBarModule,
-    MatDividerModule,
-    MatListModule,
-    MatCardModule,
-    MatExpansionModule,
-    MatToolbarModule,
-    MatTabsModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatChipsModule,
-    MatAutocompleteModule,
-    MatProgressSpinnerModule,
-    MatDialogModule,
-    FlexLayoutModule
+    HttpClientModule,
+    CoreModule,
+    BasicsSectionModule,
+    ComponentsSectionModule,
+    DirectivesSectionModule,
+    RoutingSectionModule,
+    ObservablesSectionModule,
+    FormsSectionModule,
+    PipesSectionModule,
+    HttpSectionModule,
+    AuthSectionModule,
+    DynamicComponentsSectionModule,
+    ModulesSectionModule,
+    ServicesSectionModule,
+    SharedModule,
+    AppRoutingModule,
+
   ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptorService, multi: true }],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

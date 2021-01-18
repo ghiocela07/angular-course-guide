@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/auth.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-routing-home',
@@ -14,21 +14,21 @@ export class RoutingHomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onLoadServers(id: number) {
+  onLoadServers(id: number): void {
     // complex actions
     // navigate to servers
     this.router.navigate(['routing/servers', id, 'edit'], { queryParams: { allowEdit: '1' }, fragment: 'loading' });
   }
 
-  isLoggedIn() {
+  isLoggedIn(): boolean {
     return this.authService.loggedIn;
   }
 
-  onLogin() {
+  onLogin(): void {
     this.authService.login();
   }
 
-  onLogout() {
+  onLogout(): void {
     this.authService.logout();
   }
 }

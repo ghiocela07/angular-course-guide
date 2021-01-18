@@ -1,20 +1,19 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { AccountsService } from '../services/accounts.service';
-import { LoggingService } from '../services/logging.service';
+import { ServicesAccountsService } from '../../core/services/services-accounts.service';
 
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css'],
-  // providers: [LoggingService]
+  // providers: [ServicesLoggingService]
 })
 export class AccountComponent implements OnInit {
 
   @Input() account: { name: string, status: string } | undefined;
   @Input() id = -1;
 
-  constructor(// private loggingService: LoggingService,
-    private accountsService: AccountsService) { }
+  constructor(// private loggingService: ServicesLoggingService,
+    private accountsService: ServicesAccountsService) { }
 
   ngOnInit(): void {
   }

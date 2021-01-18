@@ -1,6 +1,6 @@
 import { templateSourceUrl } from '@angular/compiler';
 import { Component } from '@angular/core';
-import { SnackBarService } from 'src/app/shared/snack-bar.service';
+import { SnackBarService } from 'src/app/core/services/snack-bar.service';
 
 @Component({
     selector: 'app-success-alert',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SnackBarService } from 'src/app/shared/snack-bar.service';
+import { SnackBarService } from 'src/app/core/services/snack-bar.service';
 
 @Component({
   selector: 'app-warning-alert',

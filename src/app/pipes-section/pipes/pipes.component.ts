@@ -11,21 +11,25 @@ export class PipesComponent {
   sortField = '';
   sortFields = ['name', 'status', 'instanceType', 'started'];
   statuses = ['stable', 'offline', 'critical'];
+
   appStatus = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('stable');
     }, 2000);
   });
+
   availableSortFields = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(this.sortFields);
     }, 2000);
   }) as Promise<any[]>;
+
   availableStatuses = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(this.statuses);
     }, 2000);
   }) as Promise<any[]>;
+
   servers = [
     {
       instanceType: 'medium',
@@ -53,7 +57,8 @@ export class PipesComponent {
     }
   ];
 
-  getStatusClasses(server: { instanceType: string, name: string, status: string, started: Date }) {
+  // TODO: find the retun type
+  getStatusClasses(server: { instanceType: string, name: string, status: string, started: Date }): any {
     return {
       'server-item-success': server.status === 'stable',
       'server-item-warning': server.status === 'offline',
@@ -61,7 +66,7 @@ export class PipesComponent {
     };
   }
 
-  onAddServer() {
+  onAddServer(): void {
     this.servers.push({
       instanceType: 'medium',
       name: 'Production',

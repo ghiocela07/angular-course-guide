@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ConfirmationDialogComponent } from 'src/app/confirmation-dialog/confirmation-dialog.component';
-import { SnackBarService } from 'src/app/shared/snack-bar.service';
-import { RoutingServer } from '../routing-server.model';
-import { RoutingServersService } from '../routing-servers.service';
-import { CanComponentDeactivate } from './can-deactivate-guard.service';
+import { ConfirmationDialogComponent } from 'src/app/shared/confirmation-dialog/confirmation-dialog.component';
+import { SnackBarService } from 'src/app/core/services/snack-bar.service';
+import { RoutingServersService } from '../../../core/services/routing-servers.service';
+import { CanComponentDeactivate } from '../../../core/services/guards/can-deactivate-guard.service';
+import { RoutingServer } from 'src/app/core/models/routing-server.model';
 
 @Component({
   selector: 'app-routing-edit-server',

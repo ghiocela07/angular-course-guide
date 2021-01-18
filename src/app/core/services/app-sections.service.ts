@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AppSection } from './app-section.model';
-import { appSections } from './sections';
+import { AppSection } from '../models/app-section.model';
+import { appSections } from '../sections';
 
 @Injectable({ providedIn: 'root' })
 export class AppSectionService {

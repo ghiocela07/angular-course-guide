@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Data, Params, Router } from '@angular/router';
-import { RoutingServer } from '../routing-server.model';
-import { RoutingServersService } from '../routing-servers.service';
+import { RoutingServer } from 'src/app/core/models/routing-server.model';
+import { RoutingServersService } from '../../../core/services/routing-servers.service';
 
 @Component({
   selector: 'app-routing-server',
@@ -31,11 +31,11 @@ export class RoutingServerComponent implements OnInit {
 
   }
 
-  getStatusColor() {
+  getStatusColor(): string {
     return this.server?.status === 'online' ? 'green' : 'orange';
   }
 
-  onEdit() {
+  onEdit(): void {
     this.router.navigate(['edit'], { relativeTo: this.route, queryParamsHandling: 'preserve' });
   }
 

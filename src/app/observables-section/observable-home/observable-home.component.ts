@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { interval, Observable, Subscription } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
-import { SnackBarService } from 'src/app/shared/snack-bar.service';
+import { SnackBarService } from 'src/app/core/services/snack-bar.service';
 
 @Component({
   selector: 'app-observable-home',

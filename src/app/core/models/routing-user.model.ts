@@ -1,4 +1,4 @@
-export class User {
+export class RoutingUser {
     public id: number;
     public name: string;
 

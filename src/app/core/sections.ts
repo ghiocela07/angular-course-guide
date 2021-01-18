@@ -1,4 +1,5 @@
-import { AppSection } from './app-section.model';
+import { AppSection } from './models/app-section.model';
+
 
 export const appSections: AppSection[] = [
     new AppSection(2, 'Basics', 'The Basics', 'basics'),
@@ -11,6 +12,7 @@ export const appSections: AppSection[] = [
     new AppSection(17, 'Pipes', 'Using Pipes to Transform Output', 'pipes'),
     new AppSection(18, 'Http Requests', 'Making Http Requests', 'http-requests'),
     new AppSection(20, 'Authentication', 'Authentication & Route Protection in Angular', 'authentication'),
-    new AppSection(21, 'Dynamic Components', 'Dynamic Components', 'dynamic-components')
+    new AppSection(21, 'Dynamic Components', 'Dynamic Components', 'dynamic-components'),
+    new AppSection(22, 'Modules', 'Angular Modules & Optimizing Angular Apps', 'modules')
 
 ];

@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSelectionList } from '@angular/material/list';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from 'src/app/user.model';
-import { RoutingServer } from './routing-server.model';
-import { RoutingServersService } from './routing-servers.service';
+import { RoutingServer } from 'src/app/core/models/routing-server.model';
+import { RoutingUser } from 'src/app/core/models/routing-user.model';
+import { RoutingServersService } from '../../core/services/routing-servers.service';
 
 @Component({
   selector: 'app-routing-servers',
@@ -22,16 +22,16 @@ export class RoutingServersComponent implements OnInit {
               private router: Router,
               private route: ActivatedRoute) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.servers = this.serversService.getServers();
   }
 
-  onNgModelChange(user: User) {
+  onNgModelChange(user: RoutingUser): void {
     this.selectedServer = this.serversList?.selectedOptions.selected[0].value;
     console.log('Selected server: ' + this.selectedServer?.name);
   }
 
-  onReloadPage(){
+  onReloadPage(): void{
     this.router.navigate(['../servers'], {relativeTo: this.route});
   }
 }

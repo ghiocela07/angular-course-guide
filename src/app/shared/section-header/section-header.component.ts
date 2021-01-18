@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AppSection } from '../app-section.model';
-import { AppSectionService } from '../app-sections.service';
+import { AppSection } from 'src/app/core/models/app-section.model';
+import { AppSectionService } from '../../core/services/app-sections.service';
 
 @Component({
   selector: 'app-section-header',
@@ -19,7 +19,7 @@ export class SectionHeaderComponent implements OnInit {
     this.section = this.sectionService.getSectionByRoute(path);
   }
 
-  navigateBackToMain() {
+  navigateBackToMain(): void {
     this.router.navigateByUrl('');
   }
 

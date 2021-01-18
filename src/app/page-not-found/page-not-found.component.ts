@@ -13,7 +13,7 @@ export class PageNotFoundComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onRedirectToMain() {
+  onRedirectToMain(): void {
     this.router.navigateByUrl('');
   }
 

@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AppUsersService } from '../app-users.service';
-import { User } from '../user.model';
+import { RoutingUser } from '../core/models/routing-user.model';
+import { AppUsersService } from '../core/services/app-users.service';
+
 
 @Component({
   selector: 'app-observables-section',
@@ -12,7 +13,7 @@ import { User } from '../user.model';
 export class ObservablesSectionComponent implements OnInit, OnDestroy {
 
   userActivated = false;
-  users: User[] = [];
+  users: RoutingUser[] = [];
   activateUserSubscription: Subscription | undefined;
 
   constructor(private router: Router, private usersService: AppUsersService) { }
@@ -24,11 +25,11 @@ export class ObservablesSectionComponent implements OnInit, OnDestroy {
     });
   }
 
-  navigateBackToMain() {
+  navigateBackToMain(): void {
     this.router.navigateByUrl('');
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     if (this.activateUserSubscription) {
       this.activateUserSubscription?.unsubscribe();
     }

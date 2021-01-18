@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { appSections } from '../sections';
+import { appSections } from '../core/sections';
 
 @Component({
   selector: 'app-main-page',
