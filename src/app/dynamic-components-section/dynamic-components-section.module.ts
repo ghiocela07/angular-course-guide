@@ -11,7 +11,7 @@ import { DynamicComponentsSectionComponent } from './dynamic-components-section.
     imports: [
         SharedModule,
         RouterModule.forChild([
-            { path: 'dynamic-components', component: DynamicComponentsSectionComponent }
+            { path: '', component: DynamicComponentsSectionComponent }
         ])
     ]
 })

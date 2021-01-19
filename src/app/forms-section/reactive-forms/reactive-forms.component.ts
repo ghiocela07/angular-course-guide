@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  AbstractControl, AsyncValidatorFn, FormArray, FormControl, FormGroup,
-  NG_ASYNC_VALIDATORS, ValidationErrors, ValidatorFn, Validators
+  AbstractControl, AsyncValidatorFn, FormArray, FormControl, FormGroup, ValidationErrors, Validators
 } from '@angular/forms';
-import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { COMMA, ENTER } from '@angular/cdk/keycodes/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips/chip-input';
 import { Observable } from 'rxjs';
 

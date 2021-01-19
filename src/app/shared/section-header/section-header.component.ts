@@ -15,7 +15,13 @@ export class SectionHeaderComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private sectionService: AppSectionService) { }
 
   ngOnInit(): void {
-    const path = this.route.routeConfig?.path;
+    let path;
+    if (this.route.parent?.routeConfig?.path) {
+      path = this.route.parent?.routeConfig?.path;
+    }
+    else {
+      path = this.route.routeConfig?.path;
+    }
     this.section = this.sectionService.getSectionByRoute(path);
   }
 

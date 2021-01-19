@@ -15,7 +15,7 @@ import { DirectivesDeepDiveSectionComponent } from './directives-deep-dive-secti
     imports: [
         SharedModule,
         RouterModule.forChild([
-            { path: 'directives', component: DirectivesDeepDiveSectionComponent },
+            { path: '', component: DirectivesDeepDiveSectionComponent },
         ])
     ]
 })

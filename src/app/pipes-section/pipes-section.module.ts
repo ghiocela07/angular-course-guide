@@ -28,7 +28,7 @@ import { PracticingPipesComponent } from './practicing-pipes/practicing-pipes.co
     imports: [
         SharedModule,
         RouterModule.forChild([
-            { path: 'pipes', component: PipesSectionComponent }
+            { path: '', component: PipesSectionComponent }
         ])
     ]
 })

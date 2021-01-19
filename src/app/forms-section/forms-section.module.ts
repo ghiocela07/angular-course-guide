@@ -27,7 +27,7 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     imports: [
         SharedModule,
         RouterModule.forChild([
-            { path: 'forms', component: FormsSectionComponent }
+            { path: '', component: FormsSectionComponent }
         ])
     ]
 })

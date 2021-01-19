@@ -13,7 +13,7 @@ import { HttpSectionComponent } from './http-section.component';
     imports: [
         SharedModule,
         RouterModule.forChild([
-            { path: 'http-requests', component: HttpSectionComponent }
+            { path: '', component: HttpSectionComponent }
         ])
     ]
 })

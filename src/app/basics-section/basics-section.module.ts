@@ -31,7 +31,7 @@ import { WarningAlertComponent } from './warning-alert/warning-alert.component';
     imports: [
         SharedModule,
         RouterModule.forChild([
-            { path: 'basics', component: BasicsSectionComponent }
+            { path: '', component: BasicsSectionComponent }
         ])
     ]
 })

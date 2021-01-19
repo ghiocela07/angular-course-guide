@@ -25,7 +25,7 @@ import { ServerElementComponent } from './server-element/server-element.componen
     imports: [
         SharedModule,
         RouterModule.forChild([
-            { path: 'components', component: CompDatabDeepDiveSectionComponent }
+            { path: '', component: CompDatabDeepDiveSectionComponent }
         ])
     ]
 })

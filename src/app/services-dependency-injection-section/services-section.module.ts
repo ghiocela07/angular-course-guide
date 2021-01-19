@@ -25,7 +25,7 @@ import { ServicesDependencyInjectionSectionComponent } from './services-dependen
     imports: [
         SharedModule,
         RouterModule.forChild([
-            { path: 'services', component: ServicesDependencyInjectionSectionComponent },
+            { path: '', component: ServicesDependencyInjectionSectionComponent },
         ])
     ]
 })

@@ -15,7 +15,7 @@ import { UsersComponent } from './routing-users/routing-users.component';
 
 const routes: Routes = [
     {
-        path: 'routing', component: RoutingSectionComponent,
+        path: '', component: RoutingSectionComponent,
         children: [
             { path: '', component: RoutingHomeComponent },
             { path: 'home', component: RoutingHomeComponent },

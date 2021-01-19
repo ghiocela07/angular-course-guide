@@ -11,7 +11,7 @@ import { ModulesSectionComponent } from './modules-section.component';
     imports: [
         SharedModule,
         RouterModule.forChild([
-            { path: 'modules', component: ModulesSectionComponent }
+            { path: '', component: ModulesSectionComponent }
         ])
     ]
 })

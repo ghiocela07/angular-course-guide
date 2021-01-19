@@ -16,7 +16,7 @@ import { ObservablesSectionComponent } from './observables-section.component';
         SharedModule,
         RouterModule.forChild([
             {
-                path: 'observables', component: ObservablesSectionComponent, children: [
+                path: '', component: ObservablesSectionComponent, children: [
                     { path: '', component: ObservableHomeComponent },
                     { path: 'user/:id', component: ObservableUserComponent },
 

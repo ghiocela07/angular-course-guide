@@ -27,7 +27,7 @@ export class FormsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  suggestUsername() {
+  suggestUsername(): void {
     const suggestedName = 'Superuser';
     // First approach
     // this.singupForm?.setValue({
@@ -52,7 +52,7 @@ export class FormsComponent implements OnInit {
   //   console.log(form);
   // }
 
-  onSubmit() {
+  onSubmit(): void {
     this.submitted = true;
     console.log(this.singupForm);
     this.user.username = this.singupForm?.value.userData.username;
@@ -63,7 +63,7 @@ export class FormsComponent implements OnInit {
 
   }
 
-  onClear() {
+  onClear(): void {
     this.singupForm?.reset();
     this.submitted = false;
   }

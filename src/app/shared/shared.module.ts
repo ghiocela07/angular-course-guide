@@ -33,7 +33,8 @@ import { UnlessDirective } from './unless.directive';
         ReactiveFormsModule,
         CommonModule,
         AngularMaterialModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        UnlessDirective
     ]
 })
 export class SharedModule {

@@ -11,7 +11,7 @@ import { AuthSectionComponent } from './auth-section.component';
     imports: [
         SharedModule,
         RouterModule.forChild([
-            { path: 'authentication', component: AuthSectionComponent }
+            { path: '', component: AuthSectionComponent }
         ])
     ]
 })
