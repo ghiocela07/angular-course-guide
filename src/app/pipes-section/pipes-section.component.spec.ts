@@ -7,19 +7,19 @@ describe('PipesSectionComponent', () => {
   let fixture: ComponentFixture<PipesSectionComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ PipesSectionComponent ]
-    })
-    .compileComponents();
+	await TestBed.configureTestingModule({
+		declarations: [ PipesSectionComponent ]
+	})
+	.compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PipesSectionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+	fixture = TestBed.createComponent(PipesSectionComponent);
+	component = fixture.componentInstance;
+	fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+	expect(component).toBeTruthy();
   });
 });

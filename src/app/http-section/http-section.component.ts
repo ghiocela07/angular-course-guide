@@ -9,7 +9,7 @@ export class HttpSectionComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 }

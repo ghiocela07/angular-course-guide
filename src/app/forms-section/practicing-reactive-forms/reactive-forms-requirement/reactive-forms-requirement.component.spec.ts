@@ -7,19 +7,19 @@ describe('ReactiveFormsRequirementComponent', () => {
   let fixture: ComponentFixture<ReactiveFormsRequirementComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ReactiveFormsRequirementComponent ]
-    })
-    .compileComponents();
+	await TestBed.configureTestingModule({
+		declarations: [ ReactiveFormsRequirementComponent ]
+	})
+	.compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ReactiveFormsRequirementComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+	fixture = TestBed.createComponent(ReactiveFormsRequirementComponent);
+	component = fixture.componentInstance;
+	fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+	expect(component).toBeTruthy();
   });
 });

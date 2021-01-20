@@ -10,22 +10,22 @@ import { ServicesAccountsService } from '../../core/services/services-accounts.s
 })
 export class NewAccountComponent implements OnInit {
 
-  selectedStatus = 'none';
+  public selectedStatus = 'none';
 
   constructor(// private loggingService: LoggingService,
-    private accountsService: ServicesAccountsService,
-    private snackBarService: SnackBarService) {
-    this.accountsService.statusUpdated.subscribe(
-      (status: string) => this.snackBarService.openSuccessSnackBar('Status: ' + status, 'Ok')
-    );
+	private accountsService: ServicesAccountsService,
+	private snackBarService: SnackBarService) {
+	this.accountsService.statusUpdated.subscribe(
+		(status: string) => this.snackBarService.openSuccessSnackBar('Status: ' + status, 'Ok')
+	);
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
 
   }
 
-  onCreateAccount(accountName: string): void {
-    this.accountsService.addAccount(accountName, this.selectedStatus);
-    // this.loggingService.logStatusChange(this.selectedStatus);
+  public onCreateAccount(accountName: string): void {
+	this.accountsService.addAccount(accountName, this.selectedStatus);
+	// this.loggingService.logStatusChange(this.selectedStatus);
   }
 }

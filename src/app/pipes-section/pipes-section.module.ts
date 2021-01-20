@@ -14,23 +14,23 @@ import { PracticingPipesComponent } from './practicing-pipes/practicing-pipes.co
 
 
 @NgModule({
-    declarations: [
-        PipesSectionComponent,
-        PipesComponent,
-        PracticingPipesComponent,
-        PipesRequirementComponent,
-        PipesSolutionComponent,
-        ShortenPipe,
-        FilterPipe,
-        ReversePipe,
-        SortPipe,
-    ],
-    imports: [
-        SharedModule,
-        RouterModule.forChild([
-            { path: '', component: PipesSectionComponent }
-        ])
-    ]
+	declarations: [
+		PipesSectionComponent,
+		PipesComponent,
+		PracticingPipesComponent,
+		PipesRequirementComponent,
+		PipesSolutionComponent,
+		ShortenPipe,
+		FilterPipe,
+		ReversePipe,
+		SortPipe,
+	],
+	imports: [
+		SharedModule,
+		RouterModule.forChild([
+			{ path: '', component: PipesSectionComponent }
+		])
+	]
 })
 export class PipesSectionModule {
 

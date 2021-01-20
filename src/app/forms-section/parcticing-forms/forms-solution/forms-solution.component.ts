@@ -8,25 +8,28 @@ import { NgForm } from '@angular/forms';
 })
 export class FormsSolutionComponent implements OnInit {
 
-  @ViewChild('form') form: NgForm | undefined;
-  defaultSubscription = 'advanced';
-  submitted = false;
-  subscriptionAccount = {
-    email: '',
-    subscription: '',
-    password: ''
+  @ViewChild('form')
+  public form: NgForm | undefined;
+
+  public defaultSubscription = 'advanced';
+  public submitted = false;
+
+  public subscriptionAccount = {
+	  email: '',
+	  subscription: '',
+	  password: ''
   };
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
-  onSubmit() {
-    this.subscriptionAccount.email = this.form?.value.email;
-    this.subscriptionAccount.subscription = this.form?.value.subscription;
-    this.subscriptionAccount.password = this.form?.value.password;
-    this.submitted = true;
+  public onSubmit(): void {
+	  this.subscriptionAccount.email = this.form?.value.email;
+	  this.subscriptionAccount.subscription = this.form?.value.subscription;
+	  this.subscriptionAccount.password = this.form?.value.password;
+	  this.submitted = true;
   }
 
 }

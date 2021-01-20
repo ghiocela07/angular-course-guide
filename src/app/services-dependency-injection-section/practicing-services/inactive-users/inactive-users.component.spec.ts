@@ -7,19 +7,19 @@ describe('InactiveUsersComponent', () => {
   let fixture: ComponentFixture<InactiveUsersComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ InactiveUsersComponent ]
-    })
-    .compileComponents();
+	await TestBed.configureTestingModule({
+		declarations: [ InactiveUsersComponent ]
+	})
+	.compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InactiveUsersComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+	fixture = TestBed.createComponent(InactiveUsersComponent);
+	component = fixture.componentInstance;
+	fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+	expect(component).toBeTruthy();
   });
 });

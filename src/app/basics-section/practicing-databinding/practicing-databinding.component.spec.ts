@@ -7,19 +7,19 @@ describe('PracticingDatabindingComponent', () => {
   let fixture: ComponentFixture<PracticingDatabindingComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ PracticingDatabindingComponent ]
-    })
-    .compileComponents();
+	await TestBed.configureTestingModule({
+		declarations: [ PracticingDatabindingComponent ]
+	})
+	.compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PracticingDatabindingComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+	fixture = TestBed.createComponent(PracticingDatabindingComponent);
+	component = fixture.componentInstance;
+	fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+	expect(component).toBeTruthy();
   });
 });

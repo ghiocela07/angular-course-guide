@@ -16,46 +16,46 @@ export class ObservableHomeComponent implements OnInit, OnDestroy {
 
   constructor(private snackBarService: SnackBarService) { }
 
-  ngOnInit(): void {
-    // this.firstObservableSubscripton = interval(1000).subscribe(count => {
-    //   console.log(count);
-    // });
-    const customIntervalObservable = new Observable((observer: any) => {
-      let count = 0;
-      setInterval(() => {
-        observer.next(count);
-        if (count === 5) {
-          observer.complete();
-        }
-        if (count >= 3) {
-          observer.error(new Error('Count is greater than 3!'));
+  public ngOnInit(): void {
+	// this.firstObservableSubscripton = interval(1000).subscribe(count => {
+	//   console.log(count);
+	// });
+	const customIntervalObservable = new Observable((observer: any) => {
+		let count = 0;
+		setInterval(() => {
+		observer.next(count);
+		if (count === 5) {
+			observer.complete();
+		}
+		if (count >= 3) {
+			observer.error(new Error('Count is greater than 3!'));
 
-        }
-        count++;
-      }, 1000);
-    });
+		}
+		count++;
+		}, 1000);
+	});
 
-    const observableOperator = customIntervalObservable.pipe(filter((data: any) => {
-      return data > 0;
-    }), map((data: any) => {
-      return 'Round: ' + (data + 1);
-    }));
+	const observableOperator = customIntervalObservable.pipe(filter((data: any) => {
+		return data > 0;
+	}), map((data: any) => {
+		return 'Round: ' + (data + 1);
+	}));
 
-    this.customIntervalObservableSubscription = observableOperator.subscribe((data: any) => {
-      console.log(data);
-    }, (error: any) => {
-      this.snackBarService.openErrorSnackBar(error.message, 'Ok');
-    }, () => {
-      console.log('Completed!');
-    });
+	this.customIntervalObservableSubscription = observableOperator.subscribe((data: any) => {
+		console.log(data);
+	}, (error: any) => {
+		this.snackBarService.openErrorSnackBar(error.message, 'Ok');
+	}, () => {
+		console.log('Completed!');
+	});
   }
 
-  ngOnDestroy(): void {
-    // if (this.firstObservableSubscripton) {
-    //   this.firstObservableSubscripton.unsubscribe();
-    // }
-    if (this.customIntervalObservableSubscription) {
-      this.customIntervalObservableSubscription.unsubscribe();
-    }
+  public ngOnDestroy(): void {
+	// if (this.firstObservableSubscripton) {
+	//   this.firstObservableSubscripton.unsubscribe();
+	// }
+	if (this.customIntervalObservableSubscription) {
+		this.customIntervalObservableSubscription.unsubscribe();
+	}
   }
 }

@@ -7,23 +7,23 @@ import { ObservablesSectionComponent } from './observables-section.component';
 
 
 @NgModule({
-    declarations: [
-        ObservablesSectionComponent,
-        ObservableUserComponent,
-        ObservableHomeComponent
-    ],
-    imports: [
-        SharedModule,
-        RouterModule.forChild([
-            {
-                path: '', component: ObservablesSectionComponent, children: [
-                    { path: '', component: ObservableHomeComponent },
-                    { path: 'user/:id', component: ObservableUserComponent },
+	declarations: [
+		ObservablesSectionComponent,
+		ObservableUserComponent,
+		ObservableHomeComponent
+	],
+	imports: [
+		SharedModule,
+		RouterModule.forChild([
+			{
+				path: '', component: ObservablesSectionComponent, children: [
+					{ path: '', component: ObservableHomeComponent },
+					{ path: 'user/:id', component: ObservableUserComponent },
 
-                ]
-            }
-        ])
-    ]
+				]
+			}
+		])
+	]
 })
 export class ObservablesSectionModule {
 

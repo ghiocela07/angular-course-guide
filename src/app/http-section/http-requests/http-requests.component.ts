@@ -11,56 +11,56 @@ import { PostService } from './posts.service';
   styleUrls: ['./http-requests.component.css']
 })
 export class HttpRequestsComponent implements OnInit, OnDestroy {
-  loadedPosts: Post[] = [];
-  isFetching = false;
-  error: string | undefined;
+  public loadedPosts: Post[] = [];
+  public isFetching = false;
+  public error: string | undefined;
 
   private errorSubscription: Subscription | undefined;
 
   constructor(private http: HttpClient, private postService: PostService) { }
 
-  ngOnInit(): void {
-    this.errorSubscription = this.postService.error.subscribe(errorMessage => {
-      this.error = errorMessage;
-    });
-    this.fetchPosts();
+  public ngOnInit(): void {
+	this.errorSubscription = this.postService.error.subscribe(errorMessage => {
+		this.error = errorMessage;
+	});
+	this.fetchPosts();
   }
 
-  ngOnDestroy(): void {
-    this.errorSubscription?.unsubscribe();
+  public ngOnDestroy(): void {
+	this.errorSubscription?.unsubscribe();
   }
 
-  onCreatePost(postData: Post): void {
-    // Send Http request
-    this.postService.createAndStorePosts(postData.title, postData.content);
-    // TODO: find a better solution for this
-    this.fetchPosts();
+  public onCreatePost(postData: Post): void {
+	// Send Http request
+	this.postService.createAndStorePosts(postData.title, postData.content);
+	// TODO: find a better solution for this
+	this.fetchPosts();
 
   }
 
-  onFetchPosts(): void {
-    this.fetchPosts();
+  public onFetchPosts(): void {
+	this.fetchPosts();
   }
 
-  onClearPosts(): void {
-    this.postService.deletePosts().subscribe(() => {
-      this.loadedPosts = [];
-    });
+  public onClearPosts(): void {
+	this.postService.deletePosts().subscribe(() => {
+		this.loadedPosts = [];
+	});
   }
 
-  onHandleError(): void {
-    this.error = undefined;
+  public onHandleError(): void {
+	this.error = undefined;
   }
 
   private fetchPosts(): void {
-    this.isFetching = true;
-    this.postService.fetchPosts().subscribe(posts => {
-      this.isFetching = false;
-      this.loadedPosts = posts;
-    }, error => {
-      this.isFetching = false;
-      this.error = error.message;
-    });
+	this.isFetching = true;
+	this.postService.fetchPosts().subscribe(posts => {
+		this.isFetching = false;
+		this.loadedPosts = posts;
+	}, error => {
+		this.isFetching = false;
+		this.error = error.message;
+	});
   }
 
 }

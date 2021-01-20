@@ -12,19 +12,19 @@ import { UsersComponent } from './routing-users/routing-users.component';
 
 
 @NgModule({
-    declarations: [
-        RoutingSectionComponent,
-        RoutingHomeComponent,
-        RoutingServersComponent,
-        RoutingServerComponent,
-        RoutingEditServerComponent,
-        UsersComponent,
-        UserComponent,
-    ],
-    imports: [
-        SharedModule,
-        RoutingSectionRoutingModule
-    ]
+	declarations: [
+		RoutingSectionComponent,
+		RoutingHomeComponent,
+		RoutingServersComponent,
+		RoutingServerComponent,
+		RoutingEditServerComponent,
+		UsersComponent,
+		UserComponent,
+	],
+	imports: [
+		SharedModule,
+		RoutingSectionRoutingModule
+	]
 })
 export class RoutingSectionModule {
 

@@ -7,19 +7,19 @@ describe('ServicesDependencyInjectionSectionComponent', () => {
   let fixture: ComponentFixture<ServicesDependencyInjectionSectionComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ServicesDependencyInjectionSectionComponent ]
-    })
-    .compileComponents();
+	await TestBed.configureTestingModule({
+		declarations: [ ServicesDependencyInjectionSectionComponent ]
+	})
+	.compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ServicesDependencyInjectionSectionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+	fixture = TestBed.createComponent(ServicesDependencyInjectionSectionComponent);
+	component = fixture.componentInstance;
+	fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+	expect(component).toBeTruthy();
   });
 });

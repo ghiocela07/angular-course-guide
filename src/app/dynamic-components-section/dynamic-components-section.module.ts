@@ -5,15 +5,15 @@ import { DynamicComponentsSectionComponent } from './dynamic-components-section.
 
 
 @NgModule({
-    declarations: [
-        DynamicComponentsSectionComponent
-    ],
-    imports: [
-        SharedModule,
-        RouterModule.forChild([
-            { path: '', component: DynamicComponentsSectionComponent }
-        ])
-    ]
+	declarations: [
+		DynamicComponentsSectionComponent
+	],
+	imports: [
+		SharedModule,
+		RouterModule.forChild([
+			{ path: '', component: DynamicComponentsSectionComponent }
+		])
+	]
 })
 export class DynamicComponentsSectionModule {
 

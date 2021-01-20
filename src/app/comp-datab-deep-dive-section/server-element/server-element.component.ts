@@ -7,10 +7,10 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 })
 export class ServerElementComponent { // implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
-  @Input() element: { type: string; name: string; content: string; } = { type: '', name: '', content: '' };
-  @Input() name = '';
-  @ViewChild('heading') header: ElementRef | undefined;
-  @ContentChild('contentDiv') content: ElementRef | undefined;
+  @Input() public element: { type: string; name: string; content: string; } = { type: '', name: '', content: '' };
+  @Input() public name = '';
+  @ViewChild('heading') public header: ElementRef | undefined;
+  @ContentChild('contentDiv') public content: ElementRef | undefined;
 
   // constructor() {
   //   console.log('constructor called!')

@@ -9,19 +9,19 @@ import { Router } from '@angular/router';
 export class DirectivesDeepDiveSectionComponent implements OnInit {
 
   // numbers = [1, 2, 3, 4, 5];
-  oddNumbers = [1, 3, 5];
-  evenNumbers = [2, 4];
-  onlyOdd = false;
-  value = 10;
+  public oddNumbers = [1, 3, 5];
+  public evenNumbers = [2, 4];
+  public onlyOdd = false;
+  public value = 10;
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 
-  navigateBackToMain() {
-    this.router.navigateByUrl('');
+  public navigateBackToMain(): void {
+	  this.router.navigateByUrl('');
   }
 
 }

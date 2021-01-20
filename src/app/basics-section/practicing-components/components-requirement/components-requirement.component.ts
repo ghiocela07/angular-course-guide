@@ -9,7 +9,7 @@ export class ComponentsRequirementComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 }

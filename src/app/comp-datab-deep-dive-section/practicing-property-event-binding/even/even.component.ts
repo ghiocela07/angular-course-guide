@@ -6,11 +6,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./even.component.css']
 })
 export class EvenComponent implements OnInit {
-  @Input() evenNumber = 0;
+  @Input() public evenNumber = 0;
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 }

@@ -14,19 +14,19 @@ import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MainPageComponent,
-    PageNotFoundComponent
+	AppComponent,
+	MainPageComponent,
+	PageNotFoundComponent
 
 
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    CoreModule,
-    SharedModule,
-    AppRoutingModule,
+	BrowserModule,
+	BrowserAnimationsModule,
+	HttpClientModule,
+	CoreModule,
+	SharedModule,
+	AppRoutingModule,
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

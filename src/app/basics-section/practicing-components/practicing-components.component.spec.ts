@@ -6,19 +6,19 @@ describe('PracticingComponentsComponent', () => {
   let fixture: ComponentFixture<PracticingComponentsComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [PracticingComponentsComponent]
-    })
-      .compileComponents();
+	await TestBed.configureTestingModule({
+		declarations: [PracticingComponentsComponent]
+	})
+		.compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PracticingComponentsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+	fixture = TestBed.createComponent(PracticingComponentsComponent);
+	component = fixture.componentInstance;
+	fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+	expect(component).toBeTruthy();
   });
 });

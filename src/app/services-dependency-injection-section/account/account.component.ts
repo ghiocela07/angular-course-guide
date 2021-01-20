@@ -9,19 +9,19 @@ import { ServicesAccountsService } from '../../core/services/services-accounts.s
 })
 export class AccountComponent implements OnInit {
 
-  @Input() account: { name: string, status: string } | undefined;
-  @Input() id = -1;
+  @Input() public account: { name: string, status: string } | undefined;
+  @Input() public id = -1;
 
   constructor(// private loggingService: ServicesLoggingService,
-    private accountsService: ServicesAccountsService) { }
+	private accountsService: ServicesAccountsService) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
-  onSetTo(status: string): void {
-    this.accountsService.updateStatus(this.id, status);
-    // this.loggingService.logStatusChange(status);
-    this.accountsService.statusUpdated.emit(status);
+  public onSetTo(status: string): void {
+	this.accountsService.updateStatus(this.id, status);
+	// this.loggingService.logStatusChange(status);
+	this.accountsService.statusUpdated.emit(status);
   }
 
 }

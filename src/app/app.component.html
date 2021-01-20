@@ -1,20 +1,20 @@
 <mat-toolbar class="app-toolbar" color="accent">
-  <mat-icon class="menu-icon" (click)="sidenav.toggle()">menu</mat-icon>
-  <a class="app-title" [routerLink]="''">{{title}}</a>
+    <mat-icon class="menu-icon" (click)="sidenav.toggle()">menu</mat-icon>
+    <a class="app-title" [routerLink]="''">{{title}}</a>
 
 </mat-toolbar>
 <mat-sidenav-container>
-  <mat-sidenav class="side-menu" #sidenav>
-    <mat-nav-list>
+    <mat-sidenav class="side-menu" #sidenav>
+        <mat-nav-list>
 
-      <a class="side-nav-item" mat-list-item  *ngFor="let section of appSections" [routerLink]="'/'+section.routePath" (click)="sidenav.toggle()"> {{section.title}} </a>
-      <a class="side-nav-item" mat-list-item (click)="sidenav.toggle()" mat-list-item>Close</a>
+            <a class="side-nav-item" mat-list-item *ngFor="let section of appSections" [routerLink]="'/'+section.routePath" (click)="sidenav.toggle()"> {{section.title}} </a>
+            <a class="side-nav-item" mat-list-item (click)="sidenav.toggle()" mat-list-item>Close</a>
 
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div style="height: 88vh;">
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 88vh;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
 </mat-sidenav-container>

@@ -13,23 +13,23 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
 
 
 @NgModule({
-    declarations: [
-        FormsSectionComponent,
-        FormsComponent,
-        ReactiveFormsComponent,
-        ParcticingFormsComponent,
-        FormsRequirementComponent,
-        FormsSolutionComponent,
-        PracticingReactiveFormsComponent,
-        ReactiveFormsRequirementComponent,
-        ReactiveFormsSolutionComponent,
-    ],
-    imports: [
-        SharedModule,
-        RouterModule.forChild([
-            { path: '', component: FormsSectionComponent }
-        ])
-    ]
+	declarations: [
+		FormsSectionComponent,
+		FormsComponent,
+		ReactiveFormsComponent,
+		ParcticingFormsComponent,
+		FormsRequirementComponent,
+		FormsSolutionComponent,
+		PracticingReactiveFormsComponent,
+		ReactiveFormsRequirementComponent,
+		ReactiveFormsSolutionComponent,
+	],
+	imports: [
+		SharedModule,
+		RouterModule.forChild([
+			{ path: '', component: FormsSectionComponent }
+		])
+	]
 })
 export class FormsSectionModule {
 

@@ -9,7 +9,7 @@ export class ServicesRequirementComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 }

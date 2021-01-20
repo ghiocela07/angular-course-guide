@@ -10,27 +10,27 @@ import { RoutingUser } from 'src/app/core/models/routing-user.model';
 })
 export class UserComponent implements OnInit, OnDestroy {
 
-  user: RoutingUser | undefined;
-  paramsSubscription: Subscription | undefined;
+  public user: RoutingUser | undefined;
+  public paramsSubscription: Subscription | undefined;
 
   constructor(private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    this.user = new RoutingUser(
-      this.route.snapshot.params.id,
-      this.route.snapshot.params.name
-    );
-    this.route.params.subscribe(
-      (params: Params) => {
-        this.user = new RoutingUser(params.id, params.name);
-      });
+  public ngOnInit(): void {
+	this.user = new RoutingUser(
+		this.route.snapshot.params.id,
+		this.route.snapshot.params.name
+	);
+	this.route.params.subscribe(
+		(params: Params) => {
+		this.user = new RoutingUser(params.id, params.name);
+		});
   }
 
   // Not necessary because angular unsubscribe to this when destroying component
-  ngOnDestroy(): void {
-    if (this.paramsSubscription) {
-      this.paramsSubscription.unsubscribe();
-    }
+  public ngOnDestroy(): void {
+	if (this.paramsSubscription) {
+		this.paramsSubscription.unsubscribe();
+	}
   }
 
 }

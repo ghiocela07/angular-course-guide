@@ -10,23 +10,22 @@ import { AppSectionService } from '../../core/services/app-sections.service';
 })
 export class SectionHeaderComponent implements OnInit {
 
-  section: AppSection | undefined;
+  public section: AppSection | undefined;
 
   constructor(private router: Router, private route: ActivatedRoute, private sectionService: AppSectionService) { }
 
-  ngOnInit(): void {
-    let path;
-    if (this.route.parent?.routeConfig?.path) {
-      path = this.route.parent?.routeConfig?.path;
-    }
-    else {
-      path = this.route.routeConfig?.path;
-    }
-    this.section = this.sectionService.getSectionByRoute(path);
+  public ngOnInit(): void {
+	let path;
+	if (this.route.parent?.routeConfig?.path) {
+		path = this.route.parent?.routeConfig?.path;
+	} else {
+		path = this.route.routeConfig?.path;
+	}
+	this.section = this.sectionService.getSectionByRoute(path);
   }
 
-  navigateBackToMain(): void {
-    this.router.navigateByUrl('');
+  public navigateBackToMain(): void {
+	this.router.navigateByUrl('');
   }
 
 }

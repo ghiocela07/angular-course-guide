@@ -5,11 +5,11 @@ import { appSections } from '../sections';
 @Injectable({ providedIn: 'root' })
 export class AppSectionService {
 
-    getSections(): AppSection[] {
-        return appSections;
-    }
+	public getSections(): AppSection[] {
+		return appSections;
+	}
 
-    getSectionByRoute(route: string | undefined): AppSection | undefined {
-        return appSections.find((s: AppSection) => s.routePath === route);
-    }
+	public getSectionByRoute(route: string | undefined): AppSection | undefined {
+		return appSections.find((s: AppSection) => s.routePath === route);
+	}
 }

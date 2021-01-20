@@ -7,18 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PracticingDatabindingComponent implements OnInit {
 
-  username = '';
+  public username = '';
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
   public clearUsername(): void {
-    this.username = '';
+	this.username = '';
   }
 
-  isClearButtonDisabled(): boolean {
-    return this.username === '';
+  public isClearButtonDisabled(): boolean {
+	return this.username === '';
   }
 }

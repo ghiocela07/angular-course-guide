@@ -20,34 +20,34 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 const materialModules = [
-    MatInputModule,
-    MatSliderModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatSnackBarModule,
-    MatDividerModule,
-    MatListModule,
-    MatCardModule,
-    MatExpansionModule,
-    MatToolbarModule,
-    MatTabsModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatChipsModule,
-    MatAutocompleteModule,
-    MatProgressSpinnerModule,
-    MatDialogModule,
+	MatInputModule,
+	MatSliderModule,
+	MatFormFieldModule,
+	MatButtonModule,
+	MatSnackBarModule,
+	MatDividerModule,
+	MatListModule,
+	MatCardModule,
+	MatExpansionModule,
+	MatToolbarModule,
+	MatTabsModule,
+	MatSidenavModule,
+	MatIconModule,
+	MatSelectModule,
+	MatRadioModule,
+	MatChipsModule,
+	MatAutocompleteModule,
+	MatProgressSpinnerModule,
+	MatDialogModule,
 ];
 
 @NgModule({
-    imports: [
-        materialModules
-    ],
-    exports: [
-        materialModules
-    ]
+	imports: [
+		materialModules
+	],
+	exports: [
+		materialModules
+	]
 })
 export class AngularMaterialModule {
 

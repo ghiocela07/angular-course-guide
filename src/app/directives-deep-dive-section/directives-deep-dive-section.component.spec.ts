@@ -7,19 +7,19 @@ describe('DirectivesDeepDiveSectionComponent', () => {
   let fixture: ComponentFixture<DirectivesDeepDiveSectionComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ DirectivesDeepDiveSectionComponent ]
-    })
-    .compileComponents();
+	await TestBed.configureTestingModule({
+		declarations: [ DirectivesDeepDiveSectionComponent ]
+	})
+	.compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DirectivesDeepDiveSectionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+	fixture = TestBed.createComponent(DirectivesDeepDiveSectionComponent);
+	component = fixture.componentInstance;
+	fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+	expect(component).toBeTruthy();
   });
 });

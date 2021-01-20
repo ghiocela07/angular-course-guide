@@ -12,22 +12,22 @@ import { ServicesDependencyInjectionSectionComponent } from './services-dependen
 
 
 @NgModule({
-    declarations: [
-        ServicesDependencyInjectionSectionComponent,
-        AccountComponent,
-        NewAccountComponent,
-        PracticingServicesComponent,
-        ActiveUsersComponent,
-        InactiveUsersComponent,
-        CounterComponent,
-        ServicesRequirementComponent,
-    ],
-    imports: [
-        SharedModule,
-        RouterModule.forChild([
-            { path: '', component: ServicesDependencyInjectionSectionComponent },
-        ])
-    ]
+	declarations: [
+		ServicesDependencyInjectionSectionComponent,
+		AccountComponent,
+		NewAccountComponent,
+		PracticingServicesComponent,
+		ActiveUsersComponent,
+		InactiveUsersComponent,
+		CounterComponent,
+		ServicesRequirementComponent,
+	],
+	imports: [
+		SharedModule,
+		RouterModule.forChild([
+			{ path: '', component: ServicesDependencyInjectionSectionComponent },
+		])
+	]
 })
 export class ServicesSectionModule {
 

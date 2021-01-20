@@ -11,19 +11,19 @@ import { AppUsersService } from 'src/app/core/services/app-users.service';
 export class UsersComponent implements OnInit {
 
   @ViewChild(MatSelectionList, { static: true })
-  usersList: MatSelectionList | undefined;
+  public usersList: MatSelectionList | undefined;
 
-  selectedUser: RoutingUser | undefined;
-  users: RoutingUser[] = [];
+  public selectedUser: RoutingUser | undefined;
+  public users: RoutingUser[] = [];
 
   constructor(private usersService: AppUsersService) { }
 
-  ngOnInit(): void {
-    this.users = this.usersService.getUsers();
+  public ngOnInit(): void {
+	this.users = this.usersService.getUsers();
   }
 
-  onNgModelChange(user: RoutingUser): void {
-    this.selectedUser = this.usersList?.selectedOptions.selected[0].value;
+  public onNgModelChange(user: RoutingUser): void {
+	this.selectedUser = this.usersList?.selectedOptions.selected[0].value;
   }
 
 }

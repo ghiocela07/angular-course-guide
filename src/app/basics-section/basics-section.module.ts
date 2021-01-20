@@ -13,28 +13,20 @@ import { ServersComponent } from './servers/servers.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 
-
 @NgModule({
-    declarations: [
-        ServerComponent,
-        ServersComponent,
-        SuccessAlertComponent,
-        WarningAlertComponent,
-        PracticingComponentsComponent,
-        PracticingDatabindingComponent,
-        PracticingDirectivesComponent,
-        BasicsSectionComponent,
-        ComponentsRequirementComponent,
-        DatabindingRequirementComponent,
-        DirectivesRequirementComponent,
-    ],
-    imports: [
-        SharedModule,
-        RouterModule.forChild([
-            { path: '', component: BasicsSectionComponent }
-        ])
-    ]
+  declarations: [
+	ServerComponent,
+	ServersComponent,
+	SuccessAlertComponent,
+	WarningAlertComponent,
+	PracticingComponentsComponent,
+	PracticingDatabindingComponent,
+	PracticingDirectivesComponent,
+	BasicsSectionComponent,
+	ComponentsRequirementComponent,
+	DatabindingRequirementComponent,
+	DirectivesRequirementComponent
+  ],
+  imports: [SharedModule, RouterModule.forChild([{ path: '', component: BasicsSectionComponent }])]
 })
-export class BasicsSectionModule {
-
-}
+export default class BasicsSectionModule {}

@@ -12,27 +12,27 @@ import { AppUsersService } from '../core/services/app-users.service';
 })
 export class ObservablesSectionComponent implements OnInit, OnDestroy {
 
-  userActivated = false;
-  users: RoutingUser[] = [];
-  activateUserSubscription: Subscription | undefined;
+  public userActivated = false;
+  public users: RoutingUser[] = [];
+  public activateUserSubscription: Subscription | undefined;
 
   constructor(private router: Router, private usersService: AppUsersService) { }
 
-  ngOnInit(): void {
-    this.users = this.usersService.getUsers();
-    this.usersService.activatedUserEmitter.subscribe((didActivate: boolean) => {
-      this.userActivated = didActivate;
-    });
+  public ngOnInit(): void {
+	this.users = this.usersService.getUsers();
+	this.usersService.activatedUserEmitter.subscribe((didActivate: boolean) => {
+		this.userActivated = didActivate;
+	});
   }
 
-  navigateBackToMain(): void {
-    this.router.navigateByUrl('');
+  public navigateBackToMain(): void {
+	this.router.navigateByUrl('');
   }
 
-  ngOnDestroy(): void {
-    if (this.activateUserSubscription) {
-      this.activateUserSubscription?.unsubscribe();
-    }
+  public ngOnDestroy(): void {
+	if (this.activateUserSubscription) {
+		this.activateUserSubscription?.unsubscribe();
+	}
   }
 
 }

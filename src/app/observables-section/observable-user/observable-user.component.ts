@@ -9,19 +9,19 @@ import { AppUsersService } from 'src/app/core/services/app-users.service';
 })
 export class ObservableUserComponent implements OnInit {
 
-  id = -1;
+  public id = -1;
 
   constructor(private route: ActivatedRoute, private usersService: AppUsersService) {
   }
 
-  ngOnInit() {
-    this.route.params.subscribe((params: Params) => {
-      this.id = +params.id;
-    });
+  public ngOnInit(): void {
+	  this.route.params.subscribe((params: Params) => {
+		  this.id = +params.id;
+  	});
   }
 
-  onActivate() {
-    this.usersService.activatedUserEmitter.next(true);
+  public onActivate(): void {
+	  this.usersService.activatedUserEmitter.next(true);
   }
 
 }

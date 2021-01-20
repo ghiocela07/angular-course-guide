@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -8,14 +8,14 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ConfirmationDialogComponent {
 
-  dialogRes = ['Yes', 'No'];
+  public dialogRes = ['Yes', 'No'];
 
   constructor(
-    public dialogRef: MatDialogRef<ConfirmationDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { message: string }) { }
+	public dialogRef: MatDialogRef<ConfirmationDialogComponent>,
+	@Inject(MAT_DIALOG_DATA) public data: { message: string }) { }
 
-  onConfirm(): void {
-    this.dialogRef.close(true);
+  public onConfirm(): void {
+	this.dialogRef.close(true);
   }
 
 }

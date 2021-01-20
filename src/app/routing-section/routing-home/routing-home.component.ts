@@ -11,24 +11,30 @@ export class RoutingHomeComponent implements OnInit {
 
   constructor(private router: Router, private authService: AuthService) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
-  onLoadServers(id: number): void {
-    // complex actions
-    // navigate to servers
-    this.router.navigate(['routing/servers', id, 'edit'], { queryParams: { allowEdit: '1' }, fragment: 'loading' });
+  public onLoadServers(id: number): void {
+	// complex actions
+	// navigate to servers
+	this.router.navigate(
+		['routing/servers', id, 'edit'],
+		{
+		queryParams:
+			{ allowEdit: '1' },
+		fragment: 'loading'
+		});
   }
 
-  isLoggedIn(): boolean {
-    return this.authService.loggedIn;
+  public isLoggedIn(): boolean {
+	  return this.authService.loggedIn;
   }
 
-  onLogin(): void {
-    this.authService.login();
+  public onLogin(): void {
+	  this.authService.login();
   }
 
-  onLogout(): void {
-    this.authService.logout();
+  public onLogout(): void {
+	  this.authService.logout();
   }
 }

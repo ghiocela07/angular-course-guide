@@ -10,16 +10,16 @@ import { ServicesAccountsService } from '../core/services/services-accounts.serv
 })
 export class ServicesDependencyInjectionSectionComponent implements OnInit {
 
-  accounts: { name: string, status: string }[] = [];
+  public accounts: { name: string, status: string }[] = [];
 
   constructor(private accountService: ServicesAccountsService, private router: Router) { }
 
-  ngOnInit(): void {
-    this.accounts = this.accountService.accounts;
+  public ngOnInit(): void {
+	  this.accounts = this.accountService.accounts;
   }
 
 
-  navigateBackToMain(): void {
-    this.router.navigateByUrl('');
+  public navigateBackToMain(): void {
+	  this.router.navigateByUrl('');
   }
 }

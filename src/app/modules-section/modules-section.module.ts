@@ -5,15 +5,15 @@ import { ModulesSectionComponent } from './modules-section.component';
 
 
 @NgModule({
-    declarations: [
-        ModulesSectionComponent
-    ],
-    imports: [
-        SharedModule,
-        RouterModule.forChild([
-            { path: '', component: ModulesSectionComponent }
-        ])
-    ]
+	declarations: [
+		ModulesSectionComponent
+	],
+	imports: [
+		SharedModule,
+		RouterModule.forChild([
+			{ path: '', component: ModulesSectionComponent }
+		])
+	]
 })
 export class ModulesSectionModule {
 

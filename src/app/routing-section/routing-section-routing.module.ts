@@ -14,34 +14,34 @@ import { UsersComponent } from './routing-users/routing-users.component';
 
 
 const routes: Routes = [
-    {
-        path: '', component: RoutingSectionComponent,
-        children: [
-            { path: '', component: RoutingHomeComponent },
-            { path: 'home', component: RoutingHomeComponent },
-            {
-                path: 'users', component: UsersComponent,
-                children: [
-                    { path: ':id/:name', component: UserComponent },
-                ]
-            },
-            {
-                path: 'servers',
-                // canActivate: [AuthGuard],
-                canActivateChild: [AuthGuard],
-                component: RoutingServersComponent,
-                children: [
-                    { path: ':id/edit', component: RoutingEditServerComponent, canDeactivate: [CanDeactivateGuard] },
-                    { path: ':id', component: RoutingServerComponent, resolve: { server: RoutingServerResolver } },
-                ]
-            },
+	{
+		path: '', component: RoutingSectionComponent,
+		children: [
+			{ path: '', component: RoutingHomeComponent },
+			{ path: 'home', component: RoutingHomeComponent },
+			{
+				path: 'users', component: UsersComponent,
+				children: [
+					{ path: ':id/:name', component: UserComponent },
+				]
+			},
+			{
+				path: 'servers',
+				// canActivate: [AuthGuard],
+				canActivateChild: [AuthGuard],
+				component: RoutingServersComponent,
+				children: [
+					{ path: ':id/edit', component: RoutingEditServerComponent, canDeactivate: [CanDeactivateGuard] },
+					{ path: ':id', component: RoutingServerComponent, resolve: { server: RoutingServerResolver } },
+				]
+			},
 
-        ]
-    },
+		]
+	},
 ];
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule]
 })
 export class RoutingSectionRoutingModule {
 

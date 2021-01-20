@@ -10,11 +10,11 @@ export class PageNotFoundComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
-  onRedirectToMain(): void {
-    this.router.navigateByUrl('');
+  public onRedirectToMain(): void {
+	this.router.navigateByUrl('');
   }
 
 }

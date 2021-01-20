@@ -9,8 +9,8 @@ import { SnackBarService } from 'src/app/core/services/snack-bar.service';
 export class WarningAlertComponent {
   constructor(private snackBarService: SnackBarService) { }
 
-  openSnackBar(message: string, action: string): void {
-    this.snackBarService.openWarningSnackBar(message, action);
+  public openSnackBar(message: string, action: string): void {
+	this.snackBarService.openWarningSnackBar(message, action);
   }
 
 }

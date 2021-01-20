@@ -10,10 +10,10 @@ export class BasicsSectionComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
-  navigateBackToMain() {
-    this.router.navigateByUrl('');
+  public navigateBackToMain(): void {
+	this.router.navigateByUrl('');
   }
 }

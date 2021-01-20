@@ -9,34 +9,34 @@ import { RoutingServersService } from '../../../core/services/routing-servers.se
   styleUrls: ['./routing-server.component.css']
 })
 export class RoutingServerComponent implements OnInit {
-  server: RoutingServer | undefined;
+  public server: RoutingServer | undefined;
 
   constructor(private serversService: RoutingServersService,
-              private route: ActivatedRoute,
-              private router: Router) { }
+				private route: ActivatedRoute,
+				private router: Router) { }
 
-  ngOnInit(): void {
-    this.route.data.subscribe(
-      (data: Data) => {
-        this.server = data.server;
-      });
-    // const id = +this.route.snapshot.params['id'];
-    // this.server = this.serversService.getServer(id);
+  public ngOnInit(): void {
+	this.route.data.subscribe(
+		(data: Data) => {
+		this.server = data.server;
+		});
+	// const id = +this.route.snapshot.params['id'];
+	// this.server = this.serversService.getServer(id);
 
-    // this.route.params.subscribe(
-    //   (params: Params) => {
-    //     this.server = this.serversService.getServer(+params['id']);
-    //   }
-    // );
+	// this.route.params.subscribe(
+	//   (params: Params) => {
+	//     this.server = this.serversService.getServer(+params['id']);
+	//   }
+	// );
 
   }
 
-  getStatusColor(): string {
-    return this.server?.status === 'online' ? 'green' : 'orange';
+  public getStatusColor(): string {
+	return this.server?.status === 'online' ? 'green' : 'orange';
   }
 
-  onEdit(): void {
-    this.router.navigate(['edit'], { relativeTo: this.route, queryParamsHandling: 'preserve' });
+  public onEdit(): void {
+	this.router.navigate(['edit'], { relativeTo: this.route, queryParamsHandling: 'preserve' });
   }
 
 }

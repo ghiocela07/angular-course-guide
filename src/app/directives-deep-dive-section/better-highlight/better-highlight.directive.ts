@@ -5,26 +5,28 @@ import { Directive, ElementRef, HostBinding, HostListener, Input, OnInit, Render
 })
 export class BetterHighlightDirective implements OnInit {
 
-  @Input() defaultColor = 'transparent';
-  @Input('appBetterHighlight') highlightColor = 'blue';
-  @HostBinding('style.backgroundColor') backgroundColor: string | undefined;
+  @Input() public defaultColor = 'transparent';
+  @Input('appBetterHighlight') public highlightColor = 'blue';
+  @HostBinding('style.backgroundColor') public backgroundColor: string | undefined;
 
   constructor(private elRef: ElementRef, private renderer: Renderer2) { }
 
-  ngOnInit() {
-    this.backgroundColor = this.defaultColor;
-    // this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');
+  public ngOnInit(): void {
+	  this.backgroundColor = this.defaultColor;
+	  // this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');
   }
 
-  @HostListener('mouseenter') mouseover(eventData: Event) {
-    // this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');
-    // this.backgroundColor = 'blue';
-    this.backgroundColor = this.highlightColor;
+  @HostListener('mouseenter')
+  public mouseover(eventData: Event): void {
+	  // this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');
+  	// this.backgroundColor = 'blue';
+	  this.backgroundColor = this.highlightColor;
   }
 
-  @HostListener('mouseleave') mouseleave(eventData: Event) {
-    // this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'transparent');
-    // this.backgroundColor = 'transparent';
-    this.backgroundColor = this.defaultColor;
+  @HostListener('mouseleave')
+  public mouseleave(eventData: Event): void {
+	  // this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'transparent');
+	  // this.backgroundColor = 'transparent';
+	  this.backgroundColor = this.defaultColor;
   }
 }

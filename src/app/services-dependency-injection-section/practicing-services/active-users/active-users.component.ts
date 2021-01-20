@@ -8,16 +8,16 @@ import { ServicesUsersService } from '../../../core/services/services-users.serv
 })
 export class ActiveUsersComponent implements OnInit {
 
-  activeUsers: string[] = [];
+  public activeUsers: string[] = [];
 
   constructor(private usersService: ServicesUsersService) { }
 
-  ngOnInit(): void {
-    this.activeUsers = this.usersService.activeUsers;
+  public ngOnInit(): void {
+	this.activeUsers = this.usersService.activeUsers;
   }
 
-  onSetToInactive(id: number): void {
-    this.usersService.setToInactive(id);
+  public onSetToInactive(id: number): void {
+	this.usersService.setToInactive(id);
   }
 
 

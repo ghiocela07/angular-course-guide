@@ -13,25 +13,25 @@ import { RoutingServersService } from '../../core/services/routing-servers.servi
 export class RoutingServersComponent implements OnInit {
 
   @ViewChild(MatSelectionList, { static: true })
-  serversList: MatSelectionList | undefined;
+  public serversList: MatSelectionList | undefined;
 
-  selectedServer: RoutingServer | undefined;
-  servers: RoutingServer[] = [];
+  public selectedServer: RoutingServer | undefined;
+  public servers: RoutingServer[] = [];
 
   constructor(private serversService: RoutingServersService,
-              private router: Router,
-              private route: ActivatedRoute) { }
+				private router: Router,
+				private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    this.servers = this.serversService.getServers();
+  public ngOnInit(): void {
+	this.servers = this.serversService.getServers();
   }
 
-  onNgModelChange(user: RoutingUser): void {
-    this.selectedServer = this.serversList?.selectedOptions.selected[0].value;
-    console.log('Selected server: ' + this.selectedServer?.name);
+  public onNgModelChange(user: RoutingUser): void {
+	this.selectedServer = this.serversList?.selectedOptions.selected[0].value;
+	console.log('Selected server: ' + this.selectedServer?.name);
   }
 
-  onReloadPage(): void{
-    this.router.navigate(['../servers'], {relativeTo: this.route});
+  public onReloadPage(): void {
+	this.router.navigate(['../servers'], {relativeTo: this.route});
   }
 }

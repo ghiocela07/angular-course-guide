@@ -9,15 +9,15 @@ import { appSections } from '../core/sections';
 })
 export class MainPageComponent implements OnInit {
 
-  appSections =  appSections;
+  public appSections = appSections;
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
-  navigateTo(path: string): void {
-    this.router.navigateByUrl(path);
+  public navigateTo(path: string): void {
+		this.router.navigateByUrl(path);
   }
 
 }

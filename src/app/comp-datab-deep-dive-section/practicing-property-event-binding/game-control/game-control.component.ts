@@ -8,23 +8,23 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class GameControlComponent implements OnInit {
 
   @Output()
-  numberEmitted = new EventEmitter<number>();
-  interval: any;
-  lastNumber = 0;
+  public numberEmitted = new EventEmitter<number>();
+  public interval: any;
+  public lastNumber = 0;
 
   constructor() { }
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {}
 
-  onStartGame(): void {
-    this.interval = setInterval(() => {
-      this.numberEmitted.emit(this.lastNumber + 1);
-      this.lastNumber ++;
-    }, 1000);
+  public onStartGame(): void {
+	this.interval = setInterval(() => {
+		this.numberEmitted.emit(this.lastNumber + 1);
+		this.lastNumber ++;
+	}, 1000);
   }
 
-  onStopGame(): void {
-    clearInterval(this.interval);
+  public onStopGame(): void {
+	clearInterval(this.interval);
   }
 
 }

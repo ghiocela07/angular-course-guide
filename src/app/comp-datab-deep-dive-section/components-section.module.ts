@@ -12,22 +12,22 @@ import { ServerElementComponent } from './server-element/server-element.componen
 
 
 @NgModule({
-    declarations: [
-        ServerElementComponent,
-        GameControlComponent,
-        OddComponent,
-        EvenComponent,
-        CompDatabDeepDiveSectionComponent,
-        CockpitComponent,
-        PracticingPropertyEventBindingComponent,
-        PropertyEventBindingRequirementComponent,
-    ],
-    imports: [
-        SharedModule,
-        RouterModule.forChild([
-            { path: '', component: CompDatabDeepDiveSectionComponent }
-        ])
-    ]
+	declarations: [
+		ServerElementComponent,
+		GameControlComponent,
+		OddComponent,
+		EvenComponent,
+		CompDatabDeepDiveSectionComponent,
+		CockpitComponent,
+		PracticingPropertyEventBindingComponent,
+		PropertyEventBindingRequirementComponent,
+	],
+	imports: [
+		SharedModule,
+		RouterModule.forChild([
+			{ path: '', component: CompDatabDeepDiveSectionComponent }
+		])
+	]
 })
 export class ComponentsSectionModule {
 

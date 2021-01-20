@@ -9,7 +9,7 @@ export class DirectivesRequirementComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 }

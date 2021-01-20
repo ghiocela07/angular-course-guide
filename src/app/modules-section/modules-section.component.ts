@@ -9,7 +9,7 @@ export class ModulesSectionComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 }

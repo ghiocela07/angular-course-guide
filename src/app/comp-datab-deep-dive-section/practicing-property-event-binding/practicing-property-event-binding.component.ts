@@ -6,20 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./practicing-property-event-binding.component.css']
 })
 export class PracticingPropertyEventBindingComponent implements OnInit {
-  numbers: number[] = [];
-  oddNumbers: number[] = [];
+  public numbers: number[] = [];
+  public oddNumbers: number[] = [];
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
-  onNumberEmitted(number: number): void {
-    this.numbers.push(number);
+  public onNumberEmitted(number: number): void {
+	this.numbers.push(number);
   }
 
-  isEven(number: number) {
-    return number % 2 === 0 ? true : false;
+  public isEven(number: number): boolean {
+	  return number % 2 === 0 ? true : false;
   }
 
 }

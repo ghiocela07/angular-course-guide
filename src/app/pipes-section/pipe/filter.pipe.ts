@@ -6,22 +6,22 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: any, filterString: string, propName: string) {
-    if (value.length === 0) {
-      return value;
-    }
-    if (filterString === ''){
-      return value;
-    }
-    const result = [];
-    for (const item of value) {
+  public transform(value: any, filterString: string, propName: string): any[] {
+	if (value.length === 0) {
+		return value;
+	}
+	if (filterString === '') {
+		return value;
+	}
+	const result = [];
+	for (const item of value) {
 
-      if (item[propName] === filterString) {
-        result.push(item);
-      }
-    }
+		if (item[propName] === filterString) {
+		result.push(item);
+		}
+	}
 
-    return result;
+	return result;
   }
 
 }

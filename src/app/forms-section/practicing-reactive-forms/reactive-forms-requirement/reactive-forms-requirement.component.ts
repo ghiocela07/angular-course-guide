@@ -9,7 +9,7 @@ export class ReactiveFormsRequirementComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 }

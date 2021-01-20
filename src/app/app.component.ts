@@ -8,5 +8,5 @@ import { appSections } from './core/sections';
 })
 export class AppComponent {
   public title = 'Angular - The Ultimate Guide';
-  appSections = appSections;
+  public appSections = appSections;
 }

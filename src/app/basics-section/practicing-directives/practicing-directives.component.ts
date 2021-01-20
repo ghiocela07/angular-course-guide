@@ -7,25 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PracticingDirectivesComponent implements OnInit {
 
-  displayRequirement = false;
-  buttonClicked = false;
-  logItems: string[] = [];
+  public displayRequirement = false;
+  public buttonClicked = false;
+  public logItems: string[] = [];
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
   public showRequirement(show: boolean): void {
-    this.displayRequirement = show;
+	this.displayRequirement = show;
   }
 
-  onButtonClicked(): void {
-    this.buttonClicked = true;
-    this.logItems.push(new Date().toString());
+  public onButtonClicked(): void {
+	this.buttonClicked = true;
+	this.logItems.push(new Date().toString());
   }
 
-  getColor(index: number): string {
-    return index >= 4 ? 'blue' : '';
+  public getColor(index: number): string {
+	return index >= 4 ? 'blue' : '';
   }
 }
